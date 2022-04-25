@@ -1,13 +1,20 @@
+
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
+import { useTranslation } from "react-i18next";
+import { Locales } from '../locales/keys';
+
 
 const HomeScreen = (props:any) => {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.screenContainer}>
-      <Text style={styles.title}>Home Screen</Text>
+      <Text style={styles.title}>{t(Locales.letStart)} Screen</Text>
+      
       <Pressable
         style={styles.buttonStyle}
-        onPress={() => props.navigation.navigate('Details')}>
+        onPress={() => props.navigation.navigate('SelectLanguage')}>
         <Text style={styles.buttonTextStyle}>Go To Detail Screen</Text>
       </Pressable>
     </View>

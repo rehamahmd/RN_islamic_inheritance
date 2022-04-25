@@ -27,7 +27,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import RootNavigator from './src/navigator';
-
+import './src/locales/index'
 const Section: React.FC<{
   title: string;
 }> = ({children, title}) => {
