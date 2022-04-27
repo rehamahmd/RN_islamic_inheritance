@@ -33,7 +33,7 @@ import React, { Component, useState, useEffect } from 'react';
         justifyContent: 'center',  
         alignItems:'center',
         flex:1,  
-        backgroundColor: '#fff',  
+        backgroundColor: '#4D6CFD',  
         position: 'absolute',  
         width: '100%',  
         height: '100%',  

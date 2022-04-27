@@ -3,31 +3,47 @@ import React from 'react';
     Alert,
     Animated,
     StyleSheet,
+    Text,
     TouchableOpacity,
     View,
   } from 'react-native';
   import { CurvedBottomBar } from 'react-native-curved-bottom-bar';
+
   import Ionicons from 'react-native-vector-icons/Ionicons';
+import { StyleColors } from '../../styles/colors';
+import { Dimension } from '../../styles/dimensions';
+import { TextStyles } from '../../styles/text';
+import CustomSvg from '../custom_svg';
+import HomeScreen from '../home_screen';
+import { AppIcons } from '../icons';
+import SplashScreen from '../splash_screen';
+import Home from './home';
 
   export const CustomTabBar = () => {
     const _renderIcon = (routeName: string, selectedTab: string) => {
       let icon = '';
+      let title = '';
 
       switch (routeName) {
         case 'title1':
-          icon = 'ios-home-outline';
+          icon = AppIcons.home;
+          title = 'Home';
           break;
         case 'title2':
-          icon = 'settings-outline';
+          icon = AppIcons.blackBookMark;
+          title = 'BookMarks';
           break;
       }
-
       return (
-        <Ionicons
-          name={icon}
-          size={25}
-          color={routeName === selectedTab ? 'black' : 'gray'}
-        />
+       <View style={{flexDirection:'row', justifyContent: 'center',alignItems:'center'}}>
+          <CustomSvg
+          width={18}
+          height={18}
+          svgXmlData={icon}
+       />
+       <View style={{width:10}} />
+       <Text style={[TextStyles.H5_COLOR_13,styles.title]}>{title}</Text>
+       </View>
       );
     };
     const renderTabBar = ({ routeName, selectedTab, navigate }: any) => {
@@ -49,12 +65,12 @@ import React from 'react';
         <CurvedBottomBar.Navigator
           style={styles.bottomBar}
           strokeWidth={0.5}
-          height={55}
+          height={60}
           circleWidth={55}
           bgColor="white"
           initialRouteName="title1"
           borderTopLeftRight
-          swipeEnabled
+          swipeEnabled = {false}
           renderCircle={({ selectedTab, navigate }) => (
             <Animated.View style={styles.btnCircle}>
               <TouchableOpacity
@@ -63,7 +79,12 @@ import React from 'react';
                   justifyContent: 'center',
                 }}
                 onPress={() => Alert.alert('Click Action')}>
-                <Ionicons name={'apps-sharp'} color="gray" size={25} />
+                <CustomSvg
+          width={20}
+          height={20}
+          
+          svgXmlData={AppIcons.calc}
+       />
               </TouchableOpacity>
             </Animated.View>
           )}
@@ -72,13 +93,17 @@ import React from 'react';
             name="title1"
             position="left"
             component={({ navigate }:{navigate:any}) => (
-              <View style={{ backgroundColor: '#BFEFFF', flex: 0 }} />
+              <View style={{ flex: 1 }} >
+                <Home/>
+              </View>
             )}
           />
           <CurvedBottomBar.Screen
             name="title2"
             component={({ navigate }:{navigate:any}) => (
-              <View style={{ backgroundColor: '#FFEBCD', flex: 1 }} />
+              <View style={{ backgroundColor: '#FFEBCD', flex: 1 }}>
+                <HomeScreen/>
+              </View>
             )}
             position="right"
           />
@@ -113,6 +138,13 @@ import React from 'react';
       shadowRadius: 1.41,
       elevation: 1,
       bottom: 30,
+    },
+    title: {
+      fontSize: Dimension.convertW(13),
+    
+       fontWeight:'bold',
+       color:StyleColors.Color0
+     
     },
     imgCircle: {
       width: 30,

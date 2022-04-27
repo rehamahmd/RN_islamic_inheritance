@@ -13,7 +13,7 @@
     "release:android": "npm run build && react-native run-android --variant=release",
     "build": "npm run clean && npm run tsc --",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "generate": "npx react-native generate-bootsplash ./src/assets/app_icon.png --background-color=2EE59D   --logo-width=100 --assets-path=./src/assets --flavor=main"
+    "generate": "npx react-native generate-bootsplash ./src/assets/app_logo.png --background-color=4D6CFD   --logo-width=100 --assets-path=./src/assets --flavor=main"
   },
   "dependencies": {
     "@mindinventory/react-native-tab-bar-interaction": "^2.2.2",

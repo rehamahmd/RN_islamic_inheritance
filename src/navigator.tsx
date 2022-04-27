@@ -9,6 +9,7 @@ import { CalculationForm } from './screens/calculation_form/calculation_form';
 import { CalculationFormIndex } from './screens/calculation_form';
 import SplashScreen from './screens/splash_screen';
 import Home from './screens/home/home';
+import { CustomTabBar } from './screens/home/bottom_navigation_tab_bar';
 
 
 
@@ -20,7 +21,7 @@ const RootNavigator = () => {
       <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Home2">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Home2" component={Home} />
+        <Stack.Screen name="Home2" component={CustomTabBar} />
         <Stack.Screen name="Details" component={DetailScreen} />
         <Stack.Screen name="SelectLanguage" component={SelectLanguage} />
         <Stack.Screen name="CalculationForm" component={CalculationFormIndex} />
