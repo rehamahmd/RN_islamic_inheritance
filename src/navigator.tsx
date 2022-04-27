@@ -5,6 +5,10 @@ import RNBootSplash from 'react-native-bootsplash';
 import HomeScreen from './screens/home_screen';
 import DetailScreen from './screens/details_screen';
 import { SelectLanguage } from './screens/settings/change_language';
+import { CalculationForm } from './screens/calculation_form/calculation_form';
+import { CalculationFormIndex } from './screens/calculation_form';
+import SplashScreen from './screens/splash_screen';
+import Home from './screens/home/home';
 
 
 
@@ -13,10 +17,14 @@ const Stack = createNativeStackNavigator();
 const RootNavigator = () => {
   return (
     <NavigationContainer onReady={() => RNBootSplash.hide()}>
-      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Home">
+      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Home2">
+        <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home2" component={Home} />
         <Stack.Screen name="Details" component={DetailScreen} />
         <Stack.Screen name="SelectLanguage" component={SelectLanguage} />
+        <Stack.Screen name="CalculationForm" component={CalculationFormIndex} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,5 +1,6 @@
 
 const ar = {
+    appName:'الميراث',
     // Welcome screen
     letStart: 'هيا بنا',
     welcomeFirstScreenTitle: 'Welcome to veloaeroExample!',

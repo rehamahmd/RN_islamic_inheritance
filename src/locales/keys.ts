@@ -1,4 +1,6 @@
 export enum Locales { // camel case
+
+    appName = 'appName',
     // Welcome screen
     letStart = 'letStart',
     welcomeFirstScreenTitle = 'welcomeFirstScreenTitle',

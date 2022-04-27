@@ -1,5 +1,6 @@
 
 const en = {
+    appName: 'Inheritance',
     // Welcome screen
     letStart: 'Let\'s start',
     welcomeFirstScreenTitle: 'Welcome to veloaeroExample!',
