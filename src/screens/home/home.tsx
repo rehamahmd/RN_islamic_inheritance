@@ -11,6 +11,7 @@ import HomeArticlesSection from './home_articles_section';
 import { CustomTabBar } from './bottom_navigation_tab_bar';
 import CustomSvg from '../custom_svg';
 import { AppIcons } from '../icons';
+import { formStyle } from '../calculator/fome_syle';
 // import { TabBar } from './bottom_navigation_tab_bar';
 
 
@@ -46,12 +47,15 @@ const Home = (props:any) => {
             <View>
             <Image source={require('../../assets/images/inh.png')}  style={[{width:Dimension.convertW(140), height: Dimension.convertH(50), resizeMode: 'contain'}]} /> 
           </View> 
-          <Text style={[styles.title,{fontWeight:'bold', color:'#2E2F42'}]}>Inheritance calculator</Text>
-          <Text style={[styles.title,{fontSize:12, color:'#2E2F42',paddingHorizontal:10,textAlign:'center'}]}>Inheritances have specific rules that make them different than other kinds of assets.</Text>
+          <Text style={[styles.title,{ color:'#2E2F42'},formStyle.ArabicFontFamilyBold]}>حساب المواريث</Text>
+          {/* <Text style={[styles.title,{fontSize:12, color:'#2E2F42',paddingHorizontal:10,textAlign:'center'}]}>Inheritances have specific rules that make them different than other kinds of assets.</Text> */}
+          <Text style={[styles.title,{fontSize:14, color:'#2E2F42',paddingHorizontal:10,textAlign:'center'},formStyle.ArabicFontFamilyMedium]}> للميراث قواعد محددة تجعلها مختلفة عن الأنواع الأخرى من الأصول.</Text>
+  
           <View style={{height:3}}/>
             <TouchableOpacity>
               <View style={{height:38,justifyContent:'center',alignItems:'center', width:Dimension.convertW(150),borderRadius:10, backgroundColor:'#2E2F42'}}>
-                <Text style={[{color:'white',fontSize:15,fontWeight:"bold"}]}>Try for free</Text>
+                {/* <Text style={[{color:'white',fontSize:15,fontWeight:"bold"}]}>Try for free</Text> */}
+                <Text style={[{color:'white',fontSize:15},formStyle.ArabicFontFamilyBold]}>جربه الان</Text>
               </View>
               <View style={{height:10}}/>
             </TouchableOpacity>

@@ -1,59 +1,43 @@
 
 import React from 'react';
-import {View, Text, StyleSheet, Pressable} from 'react-native';
+import {View, Text, StyleSheet, Pressable, TouchableOpacity} from 'react-native';
 import { useTranslation } from "react-i18next";
 import { Locales } from '../locales/keys';
 import { StyleColors } from '../styles/colors';
 import { TextStyles } from '../styles/text';
+import { AppIcons } from './icons';
+import CustomSvg from './custom_svg';
+import { Dimension } from '../styles/dimensions';
+import { formStyle } from './calculator/fome_syle';
 
 
 const AppBar = (props:any) => {
   const { t } = useTranslation();
-
   return (
-    <View style={styles.appbar}>
-      <Text style={[TextStyles.P3_ROMAN_Color5_1,styles.title]}>{t(Locales.appName)}</Text>
-      
-      <Text style={[TextStyles.P3_ROMAN_Color5_1,styles.title]}>{new Date().toDateString()} </Text>
-      
-    </View>
+    <TouchableOpacity style={styles.appbar} onPress={() => props.action()}>
+     <CustomSvg svgXmlData={AppIcons.backwardArrowSvg} width={15} height={15} />  
+     <Text style={[formStyle.formTitle,]}>{props.title}</Text>
+  </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  appbar: {
-    // height:50,
-    width:'100%',
-    justifyContent:'center',
-    padding:20,
+  appbar:{
+    height:'10%',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    paddingHorizontal:Dimension.convertW(20),
+    // paddingBottom:10,
+  },
+  appbarTitle:{
+    width:'90%',
+    height:40,
     backgroundColor:StyleColors.white,
-  },
-  title: {
-    fontSize: 17,
-    fontWeight:'bold',
-    paddingTop:5,
+    position:'relative',
+    top:10
+  }
  
-  },
-  buttonStyle: {
-    height: 54,
-    width: '80%',
-    marginTop: 32,
-    borderRadius: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#2EE59D',
-    shadowRadius: 5,
-    shadowOpacity: 0.7,
-    shadowColor: 'rgba(46, 229, 157, 0.5)',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-  },
-  buttonTextStyle: {
-    color: '#fdfdfd',
-    fontWeight: '700',
-  },
 });
 
 export  {AppBar};

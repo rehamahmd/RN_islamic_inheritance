@@ -1,12 +1,21 @@
 
 
 export enum StyleColors {
-    mainColor = "#38958B",
+    mainColor = "#4D6CFD",
  c1 = "#8E89D0",
  c2 = "#E192CA",
  c3 = "#FCBD7F",
  c4 = "#9ECFF9",
+ color1 = '#52BCF0',
+ color2 = '#E85481',
+ color3 = '#F26F58',
+ color1_light = '#BBDAE9',
+ color2_light = '#F2E0E8',
+ color3_light = '#FEF5DD',
+ bgColor = "#F3F8FE",
+ textColor = "#2E2F42",
  white = "#FFFFFF",
+ lightGrey = "#EFEFEF",
     Color0 = '#000000',     // Black
     Color_0_1 = '#262121', // lighter black
     Color1 = '#F8F9F9',    // light for background

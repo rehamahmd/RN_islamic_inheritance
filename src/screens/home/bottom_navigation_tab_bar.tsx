@@ -19,7 +19,7 @@ import { AppIcons } from '../icons';
 import SplashScreen from '../splash_screen';
 import Home from './home';
 
-  export const CustomTabBar = () => {
+  export const CustomTabBar = (props:any) => {
     const _renderIcon = (routeName: string, selectedTab: string) => {
       let icon = '';
       let title = '';
@@ -35,6 +35,7 @@ import Home from './home';
           break;
       }
       return (
+        <TouchableOpacity>
        <View style={{flexDirection:'row', justifyContent: 'center',alignItems:'center'}}>
           <CustomSvg
           width={18}
@@ -43,7 +44,7 @@ import Home from './home';
        />
        <View style={{width:10}} />
        <Text style={[TextStyles.H5_COLOR_13,styles.title]}>{title}</Text>
-       </View>
+       </View></TouchableOpacity>
       );
     };
     const renderTabBar = ({ routeName, selectedTab, navigate }: any) => {
@@ -78,7 +79,7 @@ import Home from './home';
                   flex: 1,
                   justifyContent: 'center',
                 }}
-                onPress={() => Alert.alert('Click Action')}>
+                onPress={() => props.navigation.push('CalculatorScreen')}>
                 <CustomSvg
           width={20}
           height={20}

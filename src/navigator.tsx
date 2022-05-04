@@ -10,6 +10,7 @@ import { CalculationFormIndex } from './screens/calculation_form';
 import SplashScreen from './screens/splash_screen';
 import Home from './screens/home/home';
 import { CustomTabBar } from './screens/home/bottom_navigation_tab_bar';
+import CalculatorScreen from './screens/calculator/calculator_screen';
 
 
 
@@ -18,10 +19,12 @@ const Stack = createNativeStackNavigator();
 const RootNavigator = () => {
   return (
     <NavigationContainer onReady={() => RNBootSplash.hide()}>
-      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Home2">
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
+      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="AppScreen">
+        
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Home2" component={CustomTabBar} />
+        <Stack.Screen name="CalculatorScreen" component={CalculatorScreen} />
+        
+        <Stack.Screen name="AppScreen" component={CustomTabBar} />
         <Stack.Screen name="Details" component={DetailScreen} />
         <Stack.Screen name="SelectLanguage" component={SelectLanguage} />
         <Stack.Screen name="CalculationForm" component={CalculationFormIndex} />
