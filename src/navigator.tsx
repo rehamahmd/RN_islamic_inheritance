@@ -11,7 +11,7 @@ import SplashScreen from './screens/splash_screen';
 import Home from './screens/home/home';
 import { CustomTabBar } from './screens/home/bottom_navigation_tab_bar';
 import CalculatorScreen from './screens/calculator/calculator_screen';
-
+import  TestChart  from "./screens/calculator/calcualation_chart";
 
 
 const Stack = createNativeStackNavigator();
@@ -23,6 +23,7 @@ const RootNavigator = () => {
         
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="CalculatorScreen" component={CalculatorScreen} />
+        <Stack.Screen name="TestChart" component={TestChart} />
         
         <Stack.Screen name="AppScreen" component={CustomTabBar} />
         <Stack.Screen name="Details" component={DetailScreen} />

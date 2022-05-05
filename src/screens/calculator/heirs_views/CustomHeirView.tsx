@@ -19,21 +19,23 @@ function CustomHeirView(props:any){
   console.log(t(heirModel.name))
   console.log(heirModel.count)
   return <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',height:40,width:'100%',marginVertical:4}}>
-      
+        <View style={{}}>
+      <Text style={[formStyle.subtitle]}>{`${t(heirModel.name)}`}</Text></View>
       <View style={[styles.inputContainer,formStyle.boxShadowStyle]}>
-        <TouchableOpacity onPress={minusAction} style={[styles.btnStyle,{backgroundColor:StyleColors.color1_light}]}>
-            <Text style={[formStyle.selectedText,{fontSize:16,color:StyleColors.color1}]}>-</Text>
-        </TouchableOpacity>
+         <TouchableOpacity onPress={plusAction} style={[styles.btnStyle,{backgroundColor:StyleColors.color2_light}]}>
+          <Text style={[formStyle.selectedText,{fontSize:16,color:StyleColors.color2}]}>+</Text>
+         </TouchableOpacity>
+
         <View style={styles.inputStyle}>
         <Text style={[formStyle.title,{alignSelf:'center'}]}>{heirModel.count}</Text>
         </View>
         
-        <TouchableOpacity onPress={plusAction} style={[styles.btnStyle,{backgroundColor:StyleColors.color2_light}]}>
-        <Text style={[formStyle.selectedText,{fontSize:16,color:StyleColors.color2}]}>+</Text>
+       
+        <TouchableOpacity onPress={minusAction} style={[styles.btnStyle,{backgroundColor:StyleColors.color1_light}]}>
+            <Text style={[formStyle.selectedText,{fontSize:16,color:StyleColors.color1}]}>-</Text>
         </TouchableOpacity>
       </View>
-      <View style={{}}>
-      <Text style={[formStyle.subtitle]}>{t(heirModel.name)}</Text></View>
+    
   </View>
 }
 

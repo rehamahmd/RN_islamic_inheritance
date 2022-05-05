@@ -13,6 +13,7 @@ import React from 'react';
 import { StyleColors } from '../../styles/colors';
 import { Dimension } from '../../styles/dimensions';
 import { TextStyles } from '../../styles/text';
+import { formStyle } from '../calculator/fome_syle';
 import CustomSvg from '../custom_svg';
 import HomeScreen from '../home_screen';
 import { AppIcons } from '../icons';
@@ -27,11 +28,11 @@ import Home from './home';
       switch (routeName) {
         case 'title1':
           icon = AppIcons.home;
-          title = 'Home';
+          title = 'الرئيسية';
           break;
         case 'title2':
           icon = AppIcons.blackBookMark;
-          title = 'BookMarks';
+          title = 'المحفوظات';
           break;
       }
       return (
@@ -43,7 +44,7 @@ import Home from './home';
           svgXmlData={icon}
        />
        <View style={{width:10}} />
-       <Text style={[TextStyles.H5_COLOR_13,styles.title]}>{title}</Text>
+       <Text style={[TextStyles.H5_COLOR_13,formStyle.title,styles.title]}>{title}</Text>
        </View></TouchableOpacity>
       );
     };
@@ -95,7 +96,7 @@ import Home from './home';
             position="left"
             component={({ navigate }:{navigate:any}) => (
               <View style={{ flex: 1 }} >
-                <Home/>
+                <Home navigation={props.navigation}/>
               </View>
             )}
           />
@@ -142,10 +143,7 @@ import Home from './home';
     },
     title: {
       fontSize: Dimension.convertW(13),
-    
-       fontWeight:'bold',
        color:StyleColors.Color0
-     
     },
     imgCircle: {
       width: 30,

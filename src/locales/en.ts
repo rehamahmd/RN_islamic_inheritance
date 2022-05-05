@@ -33,7 +33,9 @@ const en = {
    paternal_paternal_uncle:  'paternal_paternal_uncle', //  عم الأب
    full_cousin:  'full_cousin', //ابن عم شقيق
    paternal_cousin:  'paternal_cousin', // ابن عم الأب
-  
+    // calc screen
+    inheritance_calc_title : "Inheritance Calculation",
+    calculate:"Calculate",
     // Welcome screen
     letStart: 'Let\'s start',
     welcomeFirstScreenTitle: 'Welcome to veloaeroExample!',

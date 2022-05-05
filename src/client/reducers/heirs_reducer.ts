@@ -3,13 +3,14 @@
 import { GenderEnum } from "../../screens/enums/gender_enum";
 import { heirsEnum } from "../../screens/enums/heirs_enum";
 import { allCalcHeirs, allHeirsForView, HeirModel, heirsMen, heirsWomen, spouse } from "../../screens/models/heir_model";
-import { ADD_DESCENDANTS_HEIRS, ADD_SPOUSE_HEIR, SET_DECEASED_GENDER, SET_HEIR_NUMBERS,SET_CALCULATION_RESULT } from "../constants";
+import { ADD_DESCENDANTS_HEIRS, ADD_SPOUSE_HEIR, SET_DECEASED_GENDER, SET_HEIR_NUMBERS,SET_CALCULATION_RESULT, SET_AMOUNT } from "../constants";
 
 import _ from "lodash";
 
 const initialState = {
   // heirs: <Array<heirsEnum>>[],
   gender: GenderEnum.male,
+  amount: 0,
   allHeirs: allHeirsForView,
   spouse: spouse,
   currentHeir: HeirModel,
@@ -64,6 +65,12 @@ export default function heirsReducer(state = initialState, action:any) {
              ...state,...state.calcResult,
              calcResult:action.payload
            }
+           case SET_AMOUNT:  
+           return {
+             ...state,
+             amount:action.payload
+           } 
+           
     default:
       return state;
   }

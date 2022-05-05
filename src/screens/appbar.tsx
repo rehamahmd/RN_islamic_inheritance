@@ -15,8 +15,9 @@ const AppBar = (props:any) => {
   const { t } = useTranslation();
   return (
     <TouchableOpacity style={styles.appbar} onPress={() => props.action()}>
-     <CustomSvg svgXmlData={AppIcons.backwardArrowSvg} width={15} height={15} />  
-     <Text style={[formStyle.formTitle,]}>{props.title}</Text>
+      <Text style={[formStyle.formTitle,]}>{props.title}</Text>
+     {/* <CustomSvg svgXmlData={AppIcons.backwardArrowSvg} width={15} height={15} />  
+      */}
   </TouchableOpacity>
   );
 };
@@ -25,7 +26,8 @@ const styles = StyleSheet.create({
   appbar:{
     height:'10%',
     flexDirection:'row',
-    justifyContent:'space-between',
+    // justifyContent:'space-between',
+    justifyContent:'center',
     alignItems:'center',
     paddingHorizontal:Dimension.convertW(20),
     // paddingBottom:10,

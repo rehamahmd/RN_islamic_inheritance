@@ -33,7 +33,11 @@ export enum Locales { // camel case
     paternal_paternal_uncle=  'paternal_paternal_uncle', //  عم الأب
     full_cousin=  'full_cousin', //ابن عم شقيق
     paternal_cousin=  'paternal_cousin', // ابن عم الأب
-  
+    
+
+    // CALC SCREEN
+    inheritance_calc_title = "inheritance_calc_title",
+    calculate = "calculate",
     // Welcome screen
     letStart = 'letStart',
     welcomeFirstScreenTitle = 'welcomeFirstScreenTitle',

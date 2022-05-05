@@ -33,7 +33,11 @@ const ar = {
    paternal_paternal_uncle:  'العم لأب', //  عم الأب
    full_cousin:  'ابن العم الشقيق', //ابن عم شقيق
    paternal_cousin:  'ابن العم لأب', // ابن عم الأب
-  
+    
+
+   // calc screen
+   inheritance_calc_title : "حساب نسبة المواريث",
+   calculate:"احسب",
     // Welcome screen
     letStart: 'هيا بنا',
     welcomeFirstScreenTitle: 'Welcome to veloaeroExample!',

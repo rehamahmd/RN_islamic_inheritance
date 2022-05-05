@@ -18,15 +18,20 @@ import { formStyle } from '../calculator/fome_syle';
 
 
 
-const Home = (props:any) => {
+function Home (props:any)  {
   const { t } = useTranslation();
-
+console.log("00000000000000")
+    console.log(props);
+    console.log(props.navigation);
   return (
       <View style={styles.scrollviewStyle}>
        <View style={{flexDirection:'column',alignItems:'center', height:200, width:'100%',backgroundColor:'#4D6CFD'}}>
-           <View style={{height:80,width:'90%',justifyContent:'center',alignItems:'flex-end'}}>
+           <View style={{height:80,width:'90%',flexDirection:'row', justifyContent:'space-between',alignItems:'center'}}>
              <TouchableOpacity style={{height:24,width:50}}>
                 <CustomSvg svgXmlData={AppIcons.whiteMenu} height={24}/>
+             </TouchableOpacity>
+             <TouchableOpacity style={{height:24,width:50}} onPress={()=>props.navigation.push("SelectLanguage")}>
+             {/* <CustomSvg svgXmlData={AppIcons.home} height={24}/> */}
              </TouchableOpacity>
            </View>
            <View style={{height:210,width:'90%',backgroundColor:'#ffffff',position:'relative',top:0,shadowRadius: 5,
@@ -63,10 +68,10 @@ const Home = (props:any) => {
             <View style={{height:10}}/>
 
             <View style={{flexDirection:'row',justifyContent:'space-between', width:'90%',height:110}}>
-            <HomeCategoryCard text={"Questions & Answers"} textColor="#52BCF0"  color='#BBDAE9' imagePath={require('../../assets/images/question-mark.png')}/>
-            <HomeCategoryCard text={"Quran & sunna"} textColor="#E85481" color="#F2E0E8" style={{ height: Dimension.convertH(45),marginTop:10,marginStart:10}}  imagePath={require('../../assets/images/koran.png')}/>
+            <HomeCategoryCard text={"اسئلة واجابات"} textColor="#52BCF0"  color='#BBDAE9' imagePath={require('../../assets/images/question-mark.png')}/>
+            <HomeCategoryCard text={"قرأن  \n وسنه"} textColor="#E85481" color="#F2E0E8" style={{ height: Dimension.convertH(45),marginTop:10,marginStart:10}}  imagePath={require('../../assets/images/koran.png')}/>
 
-            <HomeCategoryCard text={"Inheritance Laws"} textColor="#F26F58" color='#FEF5DD' style={{marginTop:4,marginStart:12}} imagePath={require('../../assets/images/balance.png')}/>
+            <HomeCategoryCard text={"قانون المواريث"} textColor="#F26F58" color='#FEF5DD' style={{marginTop:4,marginStart:12}} imagePath={require('../../assets/images/balance.png')}/>
             </View>
            
           

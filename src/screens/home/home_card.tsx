@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { TextStyles } from '../../styles/text';
 import { Dimension } from '../../styles/dimensions';
 import { StyleColors } from '../../styles/colors';
+import { formStyle } from '../calculator/fome_syle';
 
 
 
@@ -16,7 +17,7 @@ const HomeCategoryCard = (props:any) => {
      <View style={[styles.card,{backgroundColor: props.color,}]}>
      <Image  source={props.imagePath}  style={[{width:Dimension.convertW(80), height: Dimension.convertH(40),marginTop:Dimension.convertH(18), resizeMode: 'contain'}]} /> 
      <View style={[{width:'100%', marginTop:Dimension.convertH(10)}]}>
-     <Text style={[TextStyles.P3_Color5_1,styles.title,{color:props.textColor}]}>{props.text}</Text>
+     <Text style={[TextStyles.P3_Color5_1,styles.title,{color:props.textColor},formStyle.ArabicFontFamilyBold]}>{props.text}</Text>
      </View>
      </View>
     </TouchableOpacity>
@@ -33,9 +34,9 @@ const styles = StyleSheet.create({
     marginVertical:15,
   },
   title: {
-    fontSize: Dimension.convertW(12),
+    fontSize: Dimension.convertW(14),
      color:StyleColors.white,
-     fontWeight:'bold'
+    //  fontWeight:'bold'
    
   },
   buttonStyle: {

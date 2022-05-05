@@ -2,10 +2,10 @@
 
 import React, {useState} from 'react';
 import { useTranslation } from 'react-i18next';
-import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {View, TouchableOpacity, Text, StyleSheet, TextInput} from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { calculateResult } from '../../client/actions/heirs_actions';
+import { setAmount } from '../../client/actions/heirs_actions';
 import { Locales } from '../../locales/keys';
 import { StyleColors } from '../../styles/colors';
 import { Dimension } from '../../styles/dimensions';
@@ -13,47 +13,39 @@ import { Dimension } from '../../styles/dimensions';
 import { HeirModel } from '../models/heir_model';
 import TestChart from './calcualation_chart';
 import { formStyle } from './fome_syle';
-const CalculateButton = (props:any) => {
- const {heirCalc, calculateResult, navigation} = props; 
+const HeirAmount = (props:any) => {
+ const {amount, setAmount, navigation} = props; 
  const { t } = useTranslation();
  console.log("HHHHHHHHHHHHHHHHHHHHHH");
  console.log(props);
- const calc = () => {
-   calculateResult(heirCalc);
-   props.navigation.navigate('TestChart');
+ const _setAmount = (v:any) => {
+   
+  setAmount(parseFloat(v));
  }
+ 
   return (
-    <View style={styles.btnContainer}>
-           <TouchableOpacity style={styles.btn} onPress={()=>calc()}>
-             <Text style={[styles.btnText,formStyle.ArabicFontFamilyMedium]}>{t(Locales.calculate)}</Text>
-           </TouchableOpacity>
+    <View style={styles.bodyContainer}>
+           <Text style={[styles.btnText,formStyle.ArabicFontFamily]}>{'ادخل المبلغ'}</Text>
+           <TextInput onChangeText={(v)=>_setAmount(v)} keyboardType="numeric" style={{width:Dimension.convertW(160),height:Dimension.convertH(40), borderBottomWidth:1,borderBottomColor:StyleColors.Color0,textAlign:'center'}}/>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-    btnContainer:{
-      position:'relative',top:'-10%',
-        height:'14%',
+    bodyContainer:{
+        height:Dimension.convertH(70),
         width:'100%',
+        justifyContent:'space-between',
         backgroundColor:StyleColors.bgColor,
-        shadowColor: "#000",
-        shadowOffset: {
-          width: 0,
-          height: 2,
-        },
         paddingVertical:5,
-      
+        marginVertical:10,
         shadowOpacity: 0.25,
-        elevation: 2,
-        justifyContent:'center',
-        alignItems:'center',
-        
+        alignItems:'center'
     },
     btn: {
         width:Dimension.convertW(230),
         height:Dimension.convertH(45),
-        borderRadius:22,
+        // borderRadius:20,
         justifyContent:'center',
         alignItems:'center',
         backgroundColor:StyleColors.mainColor
@@ -61,8 +53,8 @@ const styles = StyleSheet.create({
         // backgroundColor:mainColor
     },
     btnText:{
-        fontSize:18,
-        color:'white'
+        fontSize:16,
+        // color:'white'
     },
     nameText:{
         fontSize:22,
@@ -73,7 +65,7 @@ const styles = StyleSheet.create({
 
 function mapStateToProps({heirs}:any)  {
   return { 
-    heirCalc: heirs.heirs,
+    amount: heirs.amount,
  }
 };
 
@@ -82,9 +74,9 @@ function mapStateToProps({heirs}:any)  {
 
 const mapDispatchToProps = (dispatch:any) => (
   bindActionCreators({
-    calculateResult,
+    setAmount,
   }, dispatch)
 );
-export default connect(mapStateToProps, mapDispatchToProps)(CalculateButton)
+export default connect(mapStateToProps, mapDispatchToProps)(HeirAmount)
 
 

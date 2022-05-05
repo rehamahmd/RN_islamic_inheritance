@@ -13,32 +13,38 @@ import { setDeceasedGender } from "../../client/actions/heirs_actions"
 import { GenderEnum } from "../enums/gender_enum"
 import WifeHeirView from "./heirs_views/spouse/WifeHeirView"
 import HeirCalculatorView from "./HeirCalculatorView"
-// import  Chart  from "./calcualation_chart"
+import { useTranslation } from "react-i18next"
+import { Locales } from "../../locales/keys"
+import  HeirAmount  from "./amount"
 
  function CalculatorScreen(props:any){
-
+  const { t } = useTranslation();
    return <View style={styles.mainContainer}>
-    <AppBar title="حساب نسبة المواريث" action={()=>props.navigation.goBack()}/>
+    <AppBar title={t(Locales.inheritance_calc_title)} action={()=>props.navigation.goBack()}/>
+    <AppBar title={''} action={()=>props.navigation.goBack()}/>
       <View style={styles.bodyContainer}>
-
-       
         <HeirCalculatorView/>
-
       </View>
-      <CalculateButton/>
+      {/* <View style={{position:'relative',top:'-5%'}}> */}
+      <CalculateButton navigation={props.navigation}/> 
+      {/* </View> */}
+    
    </View>;
 }
 
 const styles = StyleSheet.create({
     mainContainer:{
         backgroundColor:StyleColors.mainColor,
-        height:'82%'
+        height:'82%',
+        justifyContent:'space-between',
     },
     bodyContainer:{
         display:"flex",
-       
+        position:"relative",
+        top:'-10%',
         backgroundColor:StyleColors.bgColor,
-       
+        borderTopRightRadius:30,
+        borderTopLeftRadius:30,
         paddingHorizontal:Dimension.convertW(16),
         alignItems:'flex-start',
         height:'100%',

@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Dimensions, ScrollView, Image, TouchableOpacity
 import PagerView from "react-native-pager-view";
 import { StyleColors } from "../../styles/colors";
 import { Dimension } from "../../styles/dimensions";
+import { formStyle } from "../calculator/fome_syle";
 import CustomSvg from "../custom_svg";
 import { AppIcons } from "../icons";
 
@@ -10,8 +11,8 @@ export default function HomeArticlesSection(props:any){
   
     return <View style={styles.maincontainer}>
         <View style={styles.screenContainer}>
-            <Text style={[styles.title,{fontWeight:'bold', color:'#2E2F42', }]}>Articles</Text>
-            <TouchableOpacity><Text style={[styles.title,{fontWeight:'normal', color:'#2E2F42',fontSize:11 ,textAlignVertical:'center'}]}>View All <CustomSvg svgXmlData={AppIcons.forwardArrowSvg} width={8} height={8}/></Text></TouchableOpacity>
+            <Text style={[formStyle.title,styles.title,{ color:'#2E2F42', }]}>مقالات</Text>
+            <TouchableOpacity><Text style={[formStyle.title,{color:'#2E2F42',fontSize:11 ,textAlignVertical:'center'}]}>المزيد<CustomSvg svgXmlData={AppIcons.backwardArrowGreySvg} width={8} height={8}/></Text></TouchableOpacity>
         </View>
         <View style={{flex:1}}>
         <ScrollView  horizontal={true}  >  
@@ -37,7 +38,9 @@ export default function HomeArticlesSection(props:any){
            </TouchableOpacity>
            {/* <TouchableOpacity style={{ width:'60%'}}> */}
           <TouchableOpacity style={{width:'60%', paddingHorizontal:10, justifyContent:'center',backgroundColor:'white', height:Dimension.convertH(90)}}>
-          <Text numberOfLines={2} ellipsizeMode='tail' style={[styles.title,{fontWeight:'bold', color:'#2E2F42',fontSize:16,lineHeight:25 }]}>Inheritance. What are the most common problems and how to solve them?</Text>
+          {/* <Text numberOfLines={2} ellipsizeMode='tail' style={[styles.title,{fontWeight:'bold', color:'#2E2F42',fontSize:16,lineHeight:25 }]}>Inheritance. What are the most common problems and how to solve them?</Text> */}
+          <Text numberOfLines={2} ellipsizeMode='tail' style={[styles.title,formStyle.ArabicFontFamilyMedium,{ color:'#2E2F42',fontSize:16,lineHeight:25 }]}>الميراث. ما هي أكثر المشاكل شيوعًا وكيفية حلها</Text>
+
           
           </TouchableOpacity>
           {/* </TouchableOpacity> */}

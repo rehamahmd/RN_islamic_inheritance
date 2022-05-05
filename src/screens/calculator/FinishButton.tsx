@@ -13,7 +13,7 @@ import { Dimension } from '../../styles/dimensions';
 import { HeirModel } from '../models/heir_model';
 import TestChart from './calcualation_chart';
 import { formStyle } from './fome_syle';
-const CalculateButton = (props:any) => {
+const FinishButton = (props:any) => {
  const {heirCalc, calculateResult, navigation} = props; 
  const { t } = useTranslation();
  console.log("HHHHHHHHHHHHHHHHHHHHHH");
@@ -25,7 +25,7 @@ const CalculateButton = (props:any) => {
   return (
     <View style={styles.btnContainer}>
            <TouchableOpacity style={styles.btn} onPress={()=>calc()}>
-             <Text style={[styles.btnText,formStyle.ArabicFontFamilyMedium]}>{t(Locales.calculate)}</Text>
+             <Text style={[styles.btnText,formStyle.ArabicFontFamilyMedium]}>{'مسألة جديدة'}</Text>
            </TouchableOpacity>
     </View>
   );
@@ -85,6 +85,6 @@ const mapDispatchToProps = (dispatch:any) => (
     calculateResult,
   }, dispatch)
 );
-export default connect(mapStateToProps, mapDispatchToProps)(CalculateButton)
+export default connect(mapStateToProps, mapDispatchToProps)(FinishButton)
 
 

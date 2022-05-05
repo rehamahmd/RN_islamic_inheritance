@@ -19,6 +19,10 @@ target 'RN_islamic_inheritance' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'ReactNativeART', :path => '../node_modules/@react-native-community/art'
+
+  pod 'react-native-restart', :path => '../node_modules/react-native-restart'
+
   target 'RN_islamic_inheritanceTests' do
     inherit! :complete
     # Pods for testing

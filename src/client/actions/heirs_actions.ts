@@ -4,15 +4,15 @@ import { calculate } from '../../core';
 import { GenderEnum } from '../../screens/enums/gender_enum';
 import { heirsEnum } from '../../screens/enums/heirs_enum';
 import { HeirModel } from '../../screens/models/heir_model';
-import { ADD_SPOUSE_HEIR, SET_DECEASED_GENDER, SET_HEIR_NUMBERS, SET_CALCULATION_RESULT } from '../constants';
+import { SET_AMOUNT, SET_DECEASED_GENDER, SET_HEIR_NUMBERS, SET_CALCULATION_RESULT } from '../constants';
 
 
-export function setSpouseHeir(spouse:heirsEnum) {
-    return (dispatch:any, getState:any)=>{
-        return {
-            type: ADD_SPOUSE_HEIR,
-            payload: spouse
-        }
+export function setAmount(amount:number) {
+   
+    return {
+        type: SET_AMOUNT,
+        payload: amount
+        
     }
 }
 

@@ -18,24 +18,25 @@ const _setGender=(v:GenderEnum)=>{
   setDeceasedGender(v);
 }
   return <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',height:40,width:'100%'}}>
-      
+       <View style={{}}>
+        <Text style={formStyle.title}>النوع</Text></View>
       <View style={{flexDirection:'row',justifyContent:'space-evenly'}}>
+        
         <TouchableOpacity onPress={()=>_setGender(GenderEnum.male)} style={{flexDirection:'row',alignItems:'center'}}>
-        <Text style={gender==GenderEnum.male?formStyle.selectedText:formStyle.unselectedText}>ذكر</Text>
-        <View style={gender==GenderEnum.male?formStyle.selectedRadioView:formStyle.unselectedRadioView}>
-          <View style={{height:8,width:8,borderRadius:4,backgroundColor:StyleColors.bgColor}} />
-        </View>
+          <View style={gender==GenderEnum.male?formStyle.selectedRadioView:formStyle.unselectedRadioView}>
+            <View style={{height:8,width:8,borderRadius:4,backgroundColor:StyleColors.bgColor}} />
+          </View>
+          <Text style={gender==GenderEnum.male?formStyle.selectedText:formStyle.unselectedText}>ذكر</Text>
         </TouchableOpacity>
-        <View style={{width:Dimension.convertW(20)}}/>
+        <View style={{width:Dimension.convertW(10)}}/>
         <TouchableOpacity onPress={()=>_setGender(GenderEnum.female)} style={{flexDirection:'row',alignItems:'center'}}>
-        <Text style={gender==GenderEnum.female?formStyle.selectedText:formStyle.unselectedText}>انثي</Text>
-        <View style={gender==GenderEnum.female?formStyle.selectedRadioView:formStyle.unselectedRadioView}>
-          <View style={{height:8,width:8,borderRadius:4,backgroundColor:StyleColors.bgColor}} />
-        </View>
+          <View style={gender==GenderEnum.female?formStyle.selectedRadioView:formStyle.unselectedRadioView}>
+            <View style={{height:8,width:8,borderRadius:4,backgroundColor:StyleColors.bgColor}} />
+          </View>
+          <Text style={gender==GenderEnum.female?formStyle.selectedText:formStyle.unselectedText}>انثي</Text>
         </TouchableOpacity>
         </View> 
-        <View style={{}}>
-        <Text style={formStyle.title}>النوع</Text></View>
+       
   </View>
 }
 
