@@ -40,8 +40,6 @@ export function calculateResult(heirCalc:any){
 //        obj[name] = count;
 //     });
     var result = calculate(heirCalc);
-    console.log("result");
-    console.log(result);
     return {
         type: SET_CALCULATION_RESULT,
         payload: result

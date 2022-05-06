@@ -28,7 +28,8 @@ const _setHusbandExist=(isExist:boolean)=>{
   }
 }
   return <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',height:40,width:'100%'}}>
-      
+       <View style={{}}>
+        <Text style={formStyle.title}>هل الزوج موجود</Text></View>
       <View style={{flexDirection:'row',justifyContent:'space-evenly'}}>
         <TouchableOpacity onPress={()=>_setHusbandExist(true)} style={{flexDirection:'row',alignItems:'center'}}>
         <Text style={husbandExist==true?formStyle.selectedText:formStyle.unselectedText}>نعم</Text>
@@ -44,8 +45,7 @@ const _setHusbandExist=(isExist:boolean)=>{
         </View>
         </TouchableOpacity>
         </View> 
-        <View style={{}}>
-        <Text style={formStyle.title}>هل الزوج موجود</Text></View>
+       
   </View>
 }
 

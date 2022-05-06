@@ -11,13 +11,11 @@ import { StyleColors } from '../../styles/colors';
 import { Dimension } from '../../styles/dimensions';
 // import { mainColor } from '../../styles/colors';
 import { HeirModel } from '../models/heir_model';
-import TestChart from './calcualation_chart';
+
 import { formStyle } from './fome_syle';
 const FinishButton = (props:any) => {
  const {heirCalc, calculateResult, navigation} = props; 
  const { t } = useTranslation();
- console.log("HHHHHHHHHHHHHHHHHHHHHH");
- console.log(props);
  const calc = () => {
    calculateResult(heirCalc);
    props.navigation.navigate('TestChart');

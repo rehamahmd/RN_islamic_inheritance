@@ -24,7 +24,6 @@ import Home from './home';
     const _renderIcon = (routeName: string, selectedTab: string) => {
       let icon = '';
       let title = '';
-
       switch (routeName) {
         case 'title1':
           icon = AppIcons.home;
@@ -61,7 +60,8 @@ import Home from './home';
         </TouchableOpacity>
       );
     };
-
+console.log("JJJJJJJJJJJJJJJJj")
+console.log(props);
     return (
       <View style ={{flex:1}}>
         <CurvedBottomBar.Navigator
@@ -96,7 +96,7 @@ import Home from './home';
             position="left"
             component={({ navigate }:{navigate:any}) => (
               <View style={{ flex: 1 }} >
-                <Home navigation={props.navigation}/>
+                <Home navigation={props.navigation} onPressMenu={()=>props.onPressMenu()}/>
               </View>
             )}
           />
@@ -104,7 +104,7 @@ import Home from './home';
             name="title2"
             component={({ navigate }:{navigate:any}) => (
               <View style={{ backgroundColor: '#FFEBCD', flex: 1 }}>
-                <HomeScreen/>
+                <HomeScreen />
               </View>
             )}
             position="right"

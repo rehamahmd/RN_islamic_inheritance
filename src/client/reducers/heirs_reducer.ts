@@ -17,7 +17,6 @@ const initialState = {
   heirs: allCalcHeirs,
   heirsWomen: heirsWomen,
   heirsMen: heirsMen,
-  s:allCalcHeirs,
   calcResult: []
 };
 

@@ -20,14 +20,11 @@ import { formStyle } from '../calculator/fome_syle';
 
 function Home (props:any)  {
   const { t } = useTranslation();
-console.log("00000000000000")
-    console.log(props);
-    console.log(props.navigation);
   return (
       <View style={styles.scrollviewStyle}>
        <View style={{flexDirection:'column',alignItems:'center', height:200, width:'100%',backgroundColor:'#4D6CFD'}}>
            <View style={{height:80,width:'90%',flexDirection:'row', justifyContent:'space-between',alignItems:'center'}}>
-             <TouchableOpacity style={{height:24,width:50}}>
+             <TouchableOpacity style={{height:24,width:50}} onPress={()=>props.onPressMenu()}>
                 <CustomSvg svgXmlData={AppIcons.whiteMenu} height={24}/>
              </TouchableOpacity>
              <TouchableOpacity style={{height:24,width:50}} onPress={()=>props.navigation.push("SelectLanguage")}>

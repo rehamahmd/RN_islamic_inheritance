@@ -15,9 +15,6 @@ import { formStyle } from "../fome_syle"
 function CustomHeirView(props:any){
   const { t } = useTranslation();
   const {heirModel, minusAction, plusAction} = props;
-  console.log("--------------------");
-  console.log(t(heirModel.name))
-  console.log(heirModel.count)
   return <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',height:40,width:'100%',marginVertical:4}}>
         <View style={{}}>
       <Text style={[formStyle.subtitle]}>{`${t(heirModel.name)}`}</Text></View>

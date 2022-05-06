@@ -3,16 +3,14 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-nati
 // 
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
-import { setSpouseHeir } from "../../../client/actions/heirs_actions"
+// import { setSpouseHeir } from "../../../client/actions/heirs_actions"
 import { Dimension } from "../../../styles/dimensions"
 import { formStyle } from "../fome_syle"
 
 
  const AncestorsHeirs = (props:any) => {
     const {setSpouseHeir, ancestors} = props;
-console.log("ddddddddddancestorsdddddddddddddddddd");
-console.log(props);
-console.log(ancestors)
+
     let [selected, setSelected] = React.useState<Array<string>>([]);
     const setData =(newValue:string)=>{
     if(selected.includes(newValue)){
@@ -65,8 +63,7 @@ console.log(ancestors)
 
 
 function mapStateToProps({heirs}:any)  {
-    console.log("77777777777777777777777777777777777777777")
-    console.log('heirs')
+    
   return { 
     ancestors: heirs.ancestors,
    
@@ -75,7 +72,7 @@ function mapStateToProps({heirs}:any)  {
 
 const mapDispatchToProps = (dispatch:any) => (
   bindActionCreators({
-    setSpouseHeir,
+    
   }, dispatch)
 );
 export default connect(mapStateToProps, mapDispatchToProps)(AncestorsHeirs)

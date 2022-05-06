@@ -14,10 +14,11 @@ import { Dimension } from '../styles/dimensions';
 
 const HomeScreen = (props:any) => {
   const { t } = useTranslation();
-
+console.log("---------------")
+console.log(props);
   return (
     <View style={styles.scrollviewStyle}>
-      <AppBar />
+      <AppBar/>
       <HomeCard />
       <View style={{height:15}} />
       <HomePreviousIssueCard />

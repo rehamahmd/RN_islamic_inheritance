@@ -22,10 +22,6 @@ import RNRestart from 'react-native-restart';
 
 export const SelectLanguage = (props:any) => {
     const { i18n , t } = useTranslation()
-   console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEee");
-   console.log(props);
-   console.log(i18n);
-   console.log(t(Locales.letStart));
     const changeLanguage =async (lng:string) => {
         console.log(lng);
      i18n.changeLanguage(lng);
