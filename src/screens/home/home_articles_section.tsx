@@ -3,58 +3,33 @@ import { View, Text, StyleSheet, Dimensions, ScrollView, Image, TouchableOpacity
 import PagerView from "react-native-pager-view";
 import { StyleColors } from "../../styles/colors";
 import { Dimension } from "../../styles/dimensions";
+import { ArticlesCard } from "../articles/ArticlesCard";
+import { ArticleViewModel } from "../articles/ArticleViewModel";
+
 import { formStyle } from "../calculator/fome_syle";
 import CustomSvg from "../custom_svg";
 import { AppIcons } from "../icons";
+export  const data = [
 
+  new ArticleViewModel({id:'1', title:'الميراث. ما هي أكثر المشاكل شيوعًا وكيفية حلها', imagePath:require('../../assets/images/inh1.webp'), isSaved:true}),
+  new ArticleViewModel({id:'2', title:'المساواة في الميراث ضرورة بمنطق القرآن والدولة المدنية المعاصرة', imagePath:require('../../assets/images/inh2.png'), isSaved:false}),
+  new ArticleViewModel({id:'3', title:'مقالة عن الميراث، معضلة ميراث المرأة- لنور الدين', imagePath:require('../../assets/images/inh3.png'), isSaved:false}),
+  new ArticleViewModel({id:'4', title:'الميراث. ما هي أكثر المشاكل شيوعًا وكيفية حلها', imagePath:require('../../assets/images/images.jpg'), isSaved:false}),
+
+]
 export default function HomeArticlesSection(props:any){
-  
     return <View style={styles.maincontainer}>
         <View style={styles.screenContainer}>
             <Text style={[formStyle.title,styles.title,{ color:'#2E2F42', }]}>مقالات</Text>
             <TouchableOpacity><Text style={[formStyle.title,{color:'#2E2F42',fontSize:11 ,textAlignVertical:'center'}]}>المزيد<CustomSvg svgXmlData={AppIcons.backwardArrowGreySvg} width={8} height={8}/></Text></TouchableOpacity>
         </View>
         <View style={{flex:1}}>
-        <ScrollView  horizontal={true}  >  
-        {[1,2,3,4].map((item)=><View key={item} style={{height:Dimension.convertH(130),width:Dimensions.get("window").width - 50,backgroundColor:'#ffffff',shadowRadius: 5,
-           borderRadius:10,
-           shadowColor: "#000",
-           shadowOffset: {
-             width: 0,
-             height: 2,
-           },
-           flexDirection:'row',
-           paddingVertical:5,
-           marginEnd:10,
-           justifyContent:'space-between',
-           alignItems:'center',
-           shadowOpacity: 0.25,
-           elevation: 0,}}>
-           <TouchableOpacity>
-           <View style={{ marginStart:10, borderRadius:10, justifyContent:'center',backgroundColor:'white', width:Dimension.convertH(90),height:Dimension.convertH(90)}}>
-           <Image source={require('../../assets/images/images.jpg')}  style={[{width: Dimension.convertH(90), height: Dimension.convertH(70), resizeMode: 'contain'}]} /> 
-
-           </View>
-           </TouchableOpacity>
-           {/* <TouchableOpacity style={{ width:'60%'}}> */}
-          <TouchableOpacity style={{width:'60%', paddingHorizontal:10, justifyContent:'center',backgroundColor:'white', height:Dimension.convertH(90)}}>
-          {/* <Text numberOfLines={2} ellipsizeMode='tail' style={[styles.title,{fontWeight:'bold', color:'#2E2F42',fontSize:16,lineHeight:25 }]}>Inheritance. What are the most common problems and how to solve them?</Text> */}
-          <Text numberOfLines={2} ellipsizeMode='tail' style={[styles.title,formStyle.ArabicFontFamilyMedium,{ color:'#2E2F42',fontSize:16,lineHeight:25 }]}>الميراث. ما هي أكثر المشاكل شيوعًا وكيفية حلها</Text>
-
-          
-          </TouchableOpacity>
-          {/* </TouchableOpacity> */}
-          
-          <TouchableOpacity>
-          <View style={{width:"20%",height:'100%', justifyContent:'flex-start',position:'relative', end:15 }}>
-          <Image source={require('../../assets/images/bookmark.png')}  style={[{width: Dimension.convertH(20), height: Dimension.convertH(30), resizeMode: 'contain',paddingEnd:20}]} /> 
-          </View></TouchableOpacity>
-           </View>)
-}         
-       </ScrollView>
-       
+        <ScrollView  horizontal={true}  > 
+        {data.map((item) =>
+            <View key={item.id} style={{marginEnd:12}}><ArticlesCard key={item.id} item={item} /></View>)} 
+        </ScrollView>
         </View>
-        </View>;
+      </View>;
 }
 
 const styles = StyleSheet.create({

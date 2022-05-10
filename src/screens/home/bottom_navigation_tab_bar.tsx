@@ -13,6 +13,7 @@ import React from 'react';
 import { StyleColors } from '../../styles/colors';
 import { Dimension } from '../../styles/dimensions';
 import { TextStyles } from '../../styles/text';
+import ArticlesScreen from '../articles/ArticlesScreen';
 import { formStyle } from '../calculator/fome_syle';
 import CustomSvg from '../custom_svg';
 import HomeScreen from '../home_screen';
@@ -36,18 +37,20 @@ import Home from './home';
       }
       return (
         <TouchableOpacity>
-       <View style={{flexDirection:'row', justifyContent: 'center',alignItems:'center'}}>
-          <CustomSvg
-          width={18}
-          height={18}
-          svgXmlData={icon}
-       />
-       <View style={{width:10}} />
-       <Text style={[TextStyles.H5_COLOR_13,formStyle.title,styles.title]}>{title}</Text>
-       </View></TouchableOpacity>
+          <View style={{flexDirection:'row', justifyContent: 'center',alignItems:'center'}}>
+            <CustomSvg
+              width={18}
+              height={18}
+              svgXmlData={icon}
+          />
+          <View style={{width:10}} />
+          <Text style={[TextStyles.H5_COLOR_13,formStyle.title,styles.title]}>{title}</Text>
+          </View>
+       </TouchableOpacity>
       );
     };
     const renderTabBar = ({ routeName, selectedTab, navigate }: any) => {
+
       return (
         <TouchableOpacity
           onPress={() => navigate(routeName)}
@@ -60,8 +63,6 @@ import Home from './home';
         </TouchableOpacity>
       );
     };
-console.log("JJJJJJJJJJJJJJJJj")
-console.log(props);
     return (
       <View style ={{flex:1}}>
         <CurvedBottomBar.Navigator
@@ -82,11 +83,9 @@ console.log(props);
                 }}
                 onPress={() => props.navigation.push('CalculatorScreen')}>
                 <CustomSvg
-          width={20}
-          height={20}
-          
-          svgXmlData={AppIcons.calc}
-       />
+                  width={20}
+                  height={20}
+                  svgXmlData={AppIcons.calc}/>
               </TouchableOpacity>
             </Animated.View>
           )}
@@ -103,8 +102,8 @@ console.log(props);
           <CurvedBottomBar.Screen
             name="title2"
             component={({ navigate }:{navigate:any}) => (
-              <View style={{ backgroundColor: '#FFEBCD', flex: 1 }}>
-                <HomeScreen />
+              <View style={{ flex: 1 }}>
+                <ArticlesScreen />
               </View>
             )}
             position="right"

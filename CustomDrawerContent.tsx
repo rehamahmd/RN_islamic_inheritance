@@ -11,45 +11,51 @@ import { StyleColors } from './src/styles/colors';
 
 
 
-export default function CustomDrawerContent() {
+
+export default function CustomDrawerContent(props:any) {
   var image = './src/assets/app_logo.png';
   const [currentTab, setCurrentTab] = useState("Home");
   const {t} = useTranslation();
   return (
-      <View style={{   width: 180, justifyContent: 'space-between', alignItems:'center' }}>
+      <View style={{ flex:1,  width: 180, justifyContent: 'space-between', alignItems:'center' }}>
         <Image source={require(image)}  style={{
-        //   width: 200,
           height: 60,
           borderRadius: 10,
           marginTop: 40,
           marginBottom: 20,
           resizeMode: 'contain'
-        }}></Image>
-
-        <Text style={formStyle.formTitle}>{'حساب المواريث'}</Text>
-
-       
+        }}/>
+        <Text style={formStyle.formTitle}>{t(Locales.appName)}</Text>
         <View style={{ flexGrow: 1, marginTop: 50 }}>
-          {
-            // Tab Bar Buttons....
-          }
-
-          {TabButton(currentTab, setCurrentTab, "Home", require(image))}
-          {TabButton(currentTab, setCurrentTab, "Language", require('./src/assets/images/language.png'))}
-          {TabButton(currentTab, setCurrentTab, "Articles", require('./src/assets/images/article.png'))}
-          {TabButton(currentTab, setCurrentTab, "Settings", require(image))}
-
+          {TabButton(currentTab,()=> props.navigation.navigate('SelectLanguage'), t(Locales.menu_home), require(image))}
+          {TabButton(currentTab,()=> console.log("Language"), t(Locales.menu_articles), require('./src/assets/images/article.png'))}
+          {TabButton(currentTab,()=> console.log("Language"), t(Locales.menu_language), require('./src/assets/images/language.png'))}
+          {/* {TabButton(currentTab,()=> console.log("Language"), "Settings", require(image))} */}
         </View>
 
                   
         {/* {TabButton(currentTab, setCurrentTab, "LogOut", require(image))} */}
         <View style={{ height:50}}></View>
+        <View >
+          <View style={{ flexDirection: 'row', justifyContent:'space-between',width:140}}>
+          <CustomSvg svgXmlData={AppIcons.twitter}  width={20} height={20} />
+          <CustomSvg svgXmlData={AppIcons.facebook}  width={20} height={20} />
+          <CustomSvg svgXmlData={AppIcons.instagram}  width={20} height={20} />
+          </View>
+        </View>
+        <View style={{ height:20}}></View>
+        <View style={{ height:.1,backgroundColor:StyleColors.lightGrey, width:300}}></View>
+        <View style={{ height:10}}></View>
+        <View><Text style={formStyle.formTitle}>{'جميع الحقوق محفوظة'}</Text></View>
+        
+        <View style={{ height:20}}></View>
       </View>
 
   );
 }
 
 const TabButton = (currentTab:any, setCurrentTab:any, title:any, image:any) => {
+  const {t} = useTranslation()
   return (
 
     <TouchableOpacity onPress={() => {
@@ -64,8 +70,8 @@ const TabButton = (currentTab:any, setCurrentTab:any, title:any, image:any) => {
         alignItems: 'center',
         paddingVertical: 8,
         backgroundColor: currentTab == title ? 'white' : 'transparent',
-        paddingLeft: 13,
-        paddingRight: 35,
+        paddingEnd: 13,
+        paddingStart: 35,
         borderRadius: 8,
         marginTop: 15
       }}>
@@ -76,12 +82,10 @@ const TabButton = (currentTab:any, setCurrentTab:any, title:any, image:any) => {
         }}></Image>
       
 
-        <Text style={{
-          fontSize: 15,
-          fontWeight: 'bold',
-          paddingLeft: 15,
+        <Text style={[formStyle.formTitle,{
+              paddingHorizontal: 15,
           color: currentTab == title ? "#5359D1" : "white"
-        }}>{title}</Text>
+        }]}>{t(title)}</Text>
 
       </View>
     </TouchableOpacity>

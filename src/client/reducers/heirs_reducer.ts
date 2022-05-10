@@ -28,11 +28,11 @@ export default function heirsReducer(state = initialState, action:any) {
         if(action.payload == GenderEnum.male){
           var key = heirsEnum.wife;
           newHeirs = state.heirs;
-          _.omit(newHeirs,key);
+          _.omit(newHeirs, key);
         } else {
           var key = heirsEnum.husband;
           newHeirs = state.heirs;
-          _.omit(newHeirs,key);
+          _.omit(newHeirs, key);
         }
       return {
         ...state,
@@ -45,23 +45,15 @@ export default function heirsReducer(state = initialState, action:any) {
           heirs: action.payload
         };
         case SET_HEIR_NUMBERS:
-          // return {
-          //   ...state,allHeirs:{
-          //     ...state.allHeirs,
-              
-          //     [action.key]: action.value,
-          //   }
-          // }
           return {
-            ...state,heirs:{
+            ...state, heirs: {
               ...state.heirs,
-              
               [action.key]: action.value,
             }
           }
           case SET_CALCULATION_RESULT:  
            return {
-             ...state,...state.calcResult,
+             ...state, ...state.calcResult,
              calcResult:action.payload
            }
            case SET_AMOUNT:  

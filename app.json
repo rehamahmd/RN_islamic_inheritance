@@ -1,4 +1,6 @@
 {
   "name": "RN_islamic_inheritance",
-  "displayName": "I-I"
+  "displayName": "I-I",
+
+  "plugins": ["@react-native-google-signin/google-signin"]
 }

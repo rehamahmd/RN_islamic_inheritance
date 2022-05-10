@@ -3,26 +3,35 @@ import React from 'react';
 import RootNavigator from './src/navigator';
 import './src/locales/index'
 import { Provider } from 'react-redux';
-
-
 import { createStore,compose, combineReducers,applyMiddleware } from 'redux';
-
-// import thunk from 'redux-thunk';
 import heirsReducer from './src/client/reducers/heirs_reducer';
-
-// const store = configureStore();
-
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+import appReducer from './src/client/reducers/app_reducer';
+// import storage from 'redux-persist/lib/storage'
+import { persistReducer, persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react'
+import hardSet from 'redux-persist/es/stateReconciler/hardSet';
+import storage from "@react-native-async-storage/async-storage";
 
 const rootReducer = combineReducers(
-{ heirs: heirsReducer }
+{ heirs: heirsReducer, App: appReducer }
 );
 
-const store = createStoreWithMiddleware(rootReducer);
-export const app_store = store;
+
+const persistConfig = {
+  key: 'root',
+  storage,
+
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
+let store = createStore(persistedReducer)
+  let persistor = persistStore(store)
 const App = () => {
   return <Provider store = { store } >
-    <RootNavigator />
+    <PersistGate loading={null} persistor={persistor}>
+       <RootNavigator />
+    </PersistGate>
   </Provider>
  
 };
