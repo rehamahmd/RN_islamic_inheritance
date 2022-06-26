@@ -7,50 +7,53 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { calculateResult } from '../../client/actions/heirs_actions';
 import { Locales } from '../../locales/keys';
+import SavePdfComponent from '../../SavePdfComponent';
 import { StyleColors } from '../../styles/colors';
 import { Dimension } from '../../styles/dimensions';
 // import { mainColor } from '../../styles/colors';
 import { HeirModel } from '../models/heir_model';
 
-import { formStyle } from './fome_syle';
+import { formStyle } from './FormStyle';
 const FinishButton = (props:any) => {
  const {heirCalc, calculateResult, navigation} = props; 
  const { t } = useTranslation();
  const calc = () => {
-   calculateResult(heirCalc);
-   props.navigation.navigate('TestChart');
+
+   props.navigation.navigate('CalculatorScreen');
  }
   return (
     <View style={styles.btnContainer}>
-           <TouchableOpacity style={styles.btn} onPress={()=>calc()}>
-             <Text style={[styles.btnText,formStyle.ArabicFontFamilyMedium]}>{'مسألة جديدة'}</Text>
-           </TouchableOpacity>
+        <TouchableOpacity style={styles.btn} onPress={()=>calc()}>
+          <Text style={[styles.btnText,formStyle.ArabicFontFamilyMedium]}>{'مسألة جديدة'}</Text>
+        </TouchableOpacity>
+        <SavePdfComponent />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
     btnContainer:{
-      position:'relative',top:'-10%',
-        height:'14%',
-        width:'100%',
-        backgroundColor:StyleColors.bgColor,
-        shadowColor: "#000",
-        shadowOffset: {
-          width: 0,
-          height: 2,
-        },
-        paddingVertical:5,
-      
-        shadowOpacity: 0.25,
-        elevation: 2,
-        justifyContent:'center',
-        alignItems:'center',
+      position:'relative',
+      top:'-18%',
+      height:'14%',
+      width:'100%',
+      backgroundColor:StyleColors.bgColor,
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      paddingVertical:5,
+      flexDirection:'row',
+      shadowOpacity: 0.25,
+      elevation: 2,
+      justifyContent:'space-evenly',
+      alignItems:'center',
         
     },
     btn: {
-        width:Dimension.convertW(230),
-        height:Dimension.convertH(45),
+        width:Dimension.convertW(150),
+        height:Dimension.convertH(40),
         borderRadius:22,
         justifyContent:'center',
         alignItems:'center',

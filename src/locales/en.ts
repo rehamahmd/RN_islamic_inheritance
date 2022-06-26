@@ -47,5 +47,20 @@ const en = {
     menu_home:"Home",
     menu_articles: "Articles",
     menu_language: "Language",
+
+
+    // home
+    inheritance_calculation: "Inheritance Calculation",
+    inheritance_calculation_subtitle: "Inheritances have specific rules that make them different than other kinds of assets.",
+    inheritance_calculation_tryIt: "Try it now",
+
+    quran_and_sunna : "Quran & Sunna",
+    questions_and_answers : "Questions & Answers",
+    inheritance_law : "Inheritance Law",
+
+    home_more: "more",
+    home_main: "Home",
+    home_bookmarks: "Bookmarks",
+
 };
 export default en;

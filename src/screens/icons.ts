@@ -102,25 +102,25 @@ export class AppIcons {
       </g>
     </g>
     </svg>`;
-    static forwardArrowSvg = `<?xml version="1.0" encoding="iso-8859-1"?>
-    <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-       viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve">
-    <g>
-      <g>
-        <path fill="#000000" d="M388.425,241.951L151.609,5.79c-7.759-7.733-20.321-7.72-28.067,0.04c-7.74,7.759-7.72,20.328,0.04,28.067l222.72,222.105
-          L123.574,478.106c-7.759,7.74-7.779,20.301-0.04,28.061c3.883,3.89,8.97,5.835,14.057,5.835c5.074,0,10.141-1.932,14.017-5.795
-          l236.817-236.155c3.737-3.718,5.834-8.778,5.834-14.05S392.156,245.676,388.425,241.951z"/>
-      </g>
-    </g>
-    </svg>`;
-    arrowLeft = `<svg id="arrow_2_" data-name="arrow (2)" xmlns="http://www.w3.org/2000/svg" width="23.204" height="19.899" viewBox="0 0 23.204 19.899">
+  
+   static arrowLeft = `<svg id="arrow_2_" data-name="arrow (2)" xmlns="http://www.w3.org/2000/svg" width="23.204" height="19.899" viewBox="0 0 23.204 19.899">
        <g id="Group_10788" data-name="Group 10788">
-         <path id="Path_6449" data-name="Path 6449" d="M21.809,40.163a1.658,1.658,0,0,0-.287-.021H5.152l.357-.166a3.32,3.32,0,0,0,.938-.664l4.59-4.59a1.718,1.718,0,0,0,.241-2.2,1.66,1.66,0,0,0-2.49-.216l-8.3,8.3a1.66,1.66,0,0,0,0,2.348h0l8.3,8.3a1.66,1.66,0,0,0,2.49-.166,1.718,1.718,0,0,0-.241-2.2l-4.582-4.6a3.321,3.321,0,0,0-.83-.606l-.5-.224h16.3a1.718,1.718,0,0,0,1.752-1.395A1.66,1.66,0,0,0,21.809,40.163Z" fill="#000000" transform="translate(0 -31.842)"/>
+         <path id="Path_6449" data-name="Path 6449" d="M21.809,40.163a1.658,1.658,0,0,0-.287-.021H5.152l.357-.166a3.32,3.32,0,0,0,.938-.664l4.59-4.59a1.718,1.718,0,0,0,.241-2.2,1.66,1.66,0,0,0-2.49-.216l-8.3,8.3a1.66,1.66,0,0,0,0,2.348h0l8.3,8.3a1.66,1.66,0,0,0,2.49-.166,1.718,1.718,0,0,0-.241-2.2l-4.582-4.6a3.321,3.321,0,0,0-.83-.606l-.5-.224h16.3a1.718,1.718,0,0,0,1.752-1.395A1.66,1.66,0,0,0,21.809,40.163Z" fill="#ffffff" transform="translate(0 -31.842)"/>
        </g>
      </svg>`;
-     xbackSvg = `<svg height="311pt" viewBox="0 0 311 311.07733" width="311pt" xmlns="http://www.w3.org/2000/svg"><path fill="#000000" d="m16.035156 311.078125c-4.097656 0-8.195312-1.558594-11.308594-4.695313-6.25-6.25-6.25-16.382812 0-22.632812l279.0625-279.0625c6.25-6.25 16.382813-6.25 22.632813 0s6.25 16.382812 0 22.636719l-279.058594 279.058593c-3.136719 3.117188-7.234375 4.695313-11.328125 4.695313zm0 0"/><path fill="#000000" d="m295.117188 311.078125c-4.097657 0-8.191407-1.558594-11.308594-4.695313l-279.082032-279.058593c-6.25-6.253907-6.25-16.386719 0-22.636719s16.382813-6.25 22.636719 0l279.058594 279.0625c6.25 6.25 6.25 16.382812 0 22.632812-3.136719 3.117188-7.230469 4.695313-11.304687 4.695313zm0 0"/></svg>`;
-   
+     xbackSvg = `<svg height="311pt" viewBox="0 0 311 311.07733" width="311pt" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="m16.035156 311.078125c-4.097656 0-8.195312-1.558594-11.308594-4.695313-6.25-6.25-6.25-16.382812 0-22.632812l279.0625-279.0625c6.25-6.25 16.382813-6.25 22.632813 0s6.25 16.382812 0 22.636719l-279.058594 279.058593c-3.136719 3.117188-7.234375 4.695313-11.328125 4.695313zm0 0"/><path fill="#000000" d="m295.117188 311.078125c-4.097657 0-8.191407-1.558594-11.308594-4.695313l-279.082032-279.058593c-6.25-6.253907-6.25-16.386719 0-22.636719s16.382813-6.25 22.636719 0l279.058594 279.0625c6.25 6.25 6.25 16.382812 0 22.632812-3.136719 3.117188-7.230469 4.695313-11.304687 4.695313zm0 0"/></svg>`;
+     static forwardArrowSvg = `<?xml version="1.0" encoding="iso-8859-1"?>
+  <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve">
+  <g>
+    <g>
+      <path fill="#ffffff" d="M388.425,241.951L151.609,5.79c-7.759-7.733-20.321-7.72-28.067,0.04c-7.74,7.759-7.72,20.328,0.04,28.067l222.72,222.105
+        L123.574,478.106c-7.759,7.74-7.779,20.301-0.04,28.061c3.883,3.89,8.97,5.835,14.057,5.835c5.074,0,10.141-1.932,14.017-5.795
+        l236.817-236.155c3.737-3.718,5.834-8.778,5.834-14.05S392.156,245.676,388.425,241.951z"/>
+    </g>
+  </g>
+  </svg>`;
      static backwardArrowSvg = `<?xml version="1.0" encoding="iso-8859-1"?>
      <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -133,7 +133,6 @@ export class AppIcons {
        </g>
      </g>
      </svg>`;
-     // TODO get from design
     static  backwardArrowGreySvg = `<?xml version="1.0" encoding="iso-8859-1"?>
      <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -152,6 +151,11 @@ export class AppIcons {
    
    static emptyBookmark = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20">
     <path id="Icon_feather-bookmark" data-name="Icon feather-bookmark" d="M19,21l-7-5L5,21V5A2,2,0,0,1,7,3H17a2,2,0,0,1,2,2Z" transform="translate(-4 -2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </svg>`;
+   
+
+    static filledBookmark = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="#8E89D0" viewBox="0 0 16 20">
+    <path id="Icon_feather-bookmark" data-name="Icon feather-bookmark" d="M19,21l-7-5L5,21V5A2,2,0,0,1,7,3H17a2,2,0,0,1,2,2Z" transform="translate(-4 -2)" fill="#8E89D0" stroke="#8E89D0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
     </svg>`;
    
     static home = `

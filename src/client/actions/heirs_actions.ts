@@ -1,5 +1,5 @@
 
-import { app_store } from '../../../App';
+
 import { calculate } from '../../core';
 import { GenderEnum } from '../../screens/enums/gender_enum';
 import { heirsEnum } from '../../screens/enums/heirs_enum';

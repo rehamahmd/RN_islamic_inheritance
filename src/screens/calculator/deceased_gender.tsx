@@ -8,7 +8,7 @@ import { StyleColors } from "../../styles/colors"
 import { Dimension } from "../../styles/dimensions"
 import { GenderEnum } from "../enums/gender_enum"
 import { heirsEnum } from "../enums/heirs_enum"
-import { formStyle } from "./fome_syle"
+import { formStyle } from "./FormStyle"
 
 function DeceasedGender(props:any){
 

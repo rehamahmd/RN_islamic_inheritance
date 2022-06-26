@@ -48,6 +48,20 @@ const ar = {
    menu_home:"الرئيسية",
    menu_articles: "المقالات",
    menu_language: "اللغة",
+
+
+   // home 
+   inheritance_calculation: "حساب المواريث",
+   inheritance_calculation_subtitle: "للميراث قواعد محددة تجعلها مختلفة عن الأنواع الأخرى من الأصول.",
+   inheritance_calculation_tryIt: "جربه الان",
+
+   quran_and_sunna : "قرأن /n وسنه",
+   questions_and_answers : "اسئله واجابات",
+   inheritance_law : "قانون المواريث",
+
+   home_more: "المزيد",
+   home_main: "الرئيسية",
+   home_bookmarks: "المحفوظات",
 };
 
 export default ar;

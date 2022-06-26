@@ -9,10 +9,14 @@ import RNRestart from 'react-native-restart';
     init: () => {},
     detect: async function (callback: (lang: string) => void) {
       try {
-        await AsyncStorage.getItem(STORE_LANGUAGE_KEY).then((language) => {
+        await AsyncStorage.getItem(STORE_LANGUAGE_KEY).then(async(language) => {
           if (language) {
             // return callback(language);
-            return  callback('ar');
+            var isLangRTL = language == 'ar';
+            if (isLangRTL !== I18nManager.isRTL) { 
+              // await RNRestart.Restart()
+            }
+            return  callback(language);
           } else {
             return callback('ar');
           }

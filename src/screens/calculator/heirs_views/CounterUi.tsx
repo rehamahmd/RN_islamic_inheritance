@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import { StyleColors } from "../../../styles/colors"
 import { Dimension } from "../../../styles/dimensions"
-import { formStyle } from "../fome_syle"
+import { formStyle } from "../FormStyle"
 
 function CounterUI(props:any){
 

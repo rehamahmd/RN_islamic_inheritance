@@ -3,17 +3,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import RNBootSplash from 'react-native-bootsplash';
 import HomeScreen from './screens/home_screen';
-import DetailScreen from './screens/details_screen';
 import  SelectLanguage  from './screens/settings/change_language';
 
-import SplashScreen from './screens/splash_screen';
-import Home from './screens/home/home';
 import { CustomTabBar } from './screens/home/bottom_navigation_tab_bar';
 import CalculatorScreen from './screens/calculator/calculator_screen';
 import  CalculationChart  from './screens/calculator/CalcualationChart';
 import CalculationPieChart from './screens/calculator/CalculationPieChart';
 import CustomDrawer from '../CustomDrawer';
 import ArticlesScreen from './screens/articles/ArticlesScreen';
+import ArticlesDetails from './screens/articles/ArticlesDetails';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +27,9 @@ const RootNavigator = () => {
         <Stack.Screen name="CalculationPieChart" component={CalculationPieChart} />
         <Stack.Screen name="SelectLanguage" component={SelectLanguage} />
         <Stack.Screen name="ArticlesScreen" component={ArticlesScreen} />
+        <Stack.Screen name="ArticlesDetails" component={ArticlesDetails} />
+
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

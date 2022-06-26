@@ -76,20 +76,6 @@ export  const DrawerAPP=() => {
       <Drawer.Navigator
         backBehavior="none"
         initialRouteName="Home"
-        // defaultScreenOptions={{
-        //   activeBackgroundColor:'red',
-        // }}
-        
-        // drawerType="slide"
-        // overlayColor="transparent"
-        // drawerStyle={styles.drawerStyles}
-        // // contentContainerStyle={styles.container}
-        // drawerContentOptions={{
-        //   activeBackgroundColor: 'transparent',
-        //   activeTintColor: 'white',
-        //   inactiveTintColor: 'white',
-        // }}
-        // sceneContainerStyle={styles.scene}
         drawerContent={(props:any) => {
           setProgress(props.progress);
           return <DrawerContent {...props} />;

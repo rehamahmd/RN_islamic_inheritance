@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { TextStyles } from '../../styles/text';
 import { Dimension } from '../../styles/dimensions';
 import { StyleColors } from '../../styles/colors';
-import { formStyle } from '../calculator/fome_syle';
+import { formStyle } from '../calculator/FormStyle';
 
 
 

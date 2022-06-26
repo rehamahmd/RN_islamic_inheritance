@@ -1,5 +1,5 @@
-
-
+// #2725b9d4 , #3a39dcd1
+// linear-gradient(to right top ,#2725b9d4,#3a39dcd1,#e748bec2 ,#e748bec9 ,#e748beb5)
 export enum StyleColors {
     mainColor = "#4D6CFD",
  c1 = "#8E89D0",

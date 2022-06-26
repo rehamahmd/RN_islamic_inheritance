@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 // import { setSpouseHeir } from "../../../client/actions/heirs_actions"
 import { Dimension } from "../../../styles/dimensions"
-import { formStyle } from "../fome_syle"
+import { formStyle } from "../FormStyle"
 
 
  const AncestorsHeirs = (props:any) => {

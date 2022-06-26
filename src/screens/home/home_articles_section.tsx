@@ -1,12 +1,14 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { View, Text, StyleSheet, Dimensions, ScrollView, Image, TouchableOpacity } from "react-native";
 import PagerView from "react-native-pager-view";
+import { Locales } from "../../locales/keys";
 import { StyleColors } from "../../styles/colors";
 import { Dimension } from "../../styles/dimensions";
 import { ArticlesCard } from "../articles/ArticlesCard";
 import { ArticleViewModel } from "../articles/ArticleViewModel";
 
-import { formStyle } from "../calculator/fome_syle";
+import { formStyle } from "../calculator/FormStyle";
 import CustomSvg from "../custom_svg";
 import { AppIcons } from "../icons";
 export  const data = [
@@ -18,10 +20,11 @@ export  const data = [
 
 ]
 export default function HomeArticlesSection(props:any){
+     const { t } = useTranslation();
     return <View style={styles.maincontainer}>
         <View style={styles.screenContainer}>
-            <Text style={[formStyle.title,styles.title,{ color:'#2E2F42', }]}>مقالات</Text>
-            <TouchableOpacity><Text style={[formStyle.title,{color:'#2E2F42',fontSize:11 ,textAlignVertical:'center'}]}>المزيد<CustomSvg svgXmlData={AppIcons.backwardArrowGreySvg} width={8} height={8}/></Text></TouchableOpacity>
+            <Text style={[formStyle.title,styles.title,{ color:'#2E2F42', }]}>{t(Locales.menu_articles)}</Text>
+            <TouchableOpacity><Text style={[formStyle.title,{color:'#2E2F42',fontSize:11 ,textAlignVertical:'center'}]}>{t(Locales.home_more)}<CustomSvg svgXmlData={AppIcons.backwardArrowGreySvg} width={8} height={8}/></Text></TouchableOpacity>
         </View>
         <View style={{flex:1}}>
         <ScrollView  horizontal={true}  > 

@@ -8,7 +8,7 @@ import { StyleColors } from "../../styles/colors"
 import { Dimension } from "../../styles/dimensions"
 import { GenderEnum } from "../enums/gender_enum"
 import { HeirModel } from "../models/heir_model"
-import { formStyle } from "./fome_syle"
+import { formStyle } from "./FormStyle"
 
 import HusbandHeirView from "./heirs_views/spouse/HusbandHeirView"
 import WifeHeirView from "./heirs_views/spouse/WifeHeirView"
@@ -32,7 +32,8 @@ import { AppIcons } from "../icons"
     --heir.count;
     setHeirNumbers(key, heir.count)
   }
-
+  console.log("ppppppppppppppppppppppppp");
+  console.log(props.navigation);
   return <View style={{flex:1}}>
     <TouchableOpacity onPress={()=>props.navigation.goBack()} style={{position:'relative',end:10,height:Dimension.convertH(25), top:Dimension.convertH(20),alignItems:'flex-end'}}>
       <CustomSvg svgXmlData={AppIcons.close} fill={'#000000'} width={15} height={15} />

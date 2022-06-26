@@ -23,6 +23,8 @@ target 'RN_islamic_inheritance' do
 
   pod 'react-native-restart', :path => '../node_modules/react-native-restart'
 
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+
   target 'RN_islamic_inheritanceTests' do
     inherit! :complete
     # Pods for testing

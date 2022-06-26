@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
-import { setHeirNumbers, setSpouseHeir } from "../../../client/actions/heirs_actions"
+import { setHeirNumbers } from "../../../client/actions/heirs_actions"
 import { HeirModel } from "../../models/heir_model"
 import CustomHeirView from "./CustomHeirView"
 

@@ -1,10 +1,9 @@
-// import { StatusBar } from 'expo-status-bar';
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { Locales } from './src/locales/keys';
-import { formStyle } from './src/screens/calculator/fome_syle';
+import { formStyle } from './src/screens/calculator/FormStyle';
 import CustomSvg from './src/screens/custom_svg';
 import { AppIcons } from './src/screens/icons';
 import { StyleColors } from './src/styles/colors';
@@ -27,10 +26,17 @@ export default function CustomDrawerContent(props:any) {
         }}/>
         <Text style={formStyle.formTitle}>{t(Locales.appName)}</Text>
         <View style={{ flexGrow: 1, marginTop: 50 }}>
-          {TabButton(currentTab,()=> props.navigation.navigate('SelectLanguage'), t(Locales.menu_home), require(image))}
-          {TabButton(currentTab,()=> console.log("Language"), t(Locales.menu_articles), require('./src/assets/images/article.png'))}
-          {TabButton(currentTab,()=> console.log("Language"), t(Locales.menu_language), require('./src/assets/images/language.png'))}
-          {/* {TabButton(currentTab,()=> console.log("Language"), "Settings", require(image))} */}
+          {TabButton(currentTab,()=> {
+            props.onPressMenu();
+           
+          }, t(Locales.menu_home), require(image))}
+          {TabButton(currentTab,()=>{ 
+            props.onPressMenu();
+            props.navigation.navigate('ArticlesScreen')}, t(Locales.menu_articles), require('./src/assets/images/article.png'))}
+              {TabButton(currentTab,()=>{ 
+            props.onPressMenu();
+            props.navigation.navigate('SelectLanguage')}, t(Locales.menu_language), require('./src/assets/images/language.png'))}
+         
         </View>
 
                   

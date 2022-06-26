@@ -50,4 +50,20 @@ export enum Locales { // camel case
     menu_articles= "menu_articles",
     menu_language= "menu_language",
 
+
+    // HOme
+
+    inheritance_calculation = "inheritance_calculation",
+    inheritance_calculation_subtitle = "inheritance_calculation_subtitle",
+    inheritance_calculation_tryIt = "inheritance_calculation_tryIt",
+
+    quran_and_sunna = "quran_and_sunna",
+    questions_and_answers = "questions_and_answers",
+    inheritance_law = "inheritance_law",
+
+    home_more = "home_more",
+    home_main = "home_main",
+    home_bookmarks = "home_bookmarks",
+
+
  }

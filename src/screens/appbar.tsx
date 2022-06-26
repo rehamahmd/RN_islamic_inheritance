@@ -8,7 +8,7 @@ import { TextStyles } from '../styles/text';
 import { AppIcons } from './icons';
 import CustomSvg from './custom_svg';
 import { Dimension } from '../styles/dimensions';
-import { formStyle } from './calculator/fome_syle';
+import { formStyle } from './calculator/FormStyle';
 
 
 const AppBar = (props:any) => {

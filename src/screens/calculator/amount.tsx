@@ -12,7 +12,7 @@ import { Dimension } from '../../styles/dimensions';
 // import { mainColor } from '../../styles/colors';
 import { HeirModel } from '../models/heir_model';
 
-import { formStyle } from './fome_syle';
+import { formStyle } from './FormStyle';
 const HeirAmount = (props:any) => {
  const {amount, setAmount, navigation} = props; 
  const { t } = useTranslation();

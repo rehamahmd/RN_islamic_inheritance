@@ -16,7 +16,7 @@ import { HeirSlider } from './slider';
 import  CalculateButton  from "./calculate_button"
 import CustomSvg from '../custom_svg';
 import { AppIcons } from '../icons';
-import { formStyle } from './fome_syle';
+import { formStyle } from './FormStyle';
 import FinishButton from './FinishButton';
 import CalculationPieChart from './CalculationPieChart';
 import AllData from './data';
@@ -81,10 +81,10 @@ import AllData from './data';
   console.log(proof);
     return (
       <View style={styles.mainContainer}>
-       <AppBar title={t(Locales.inheritance_calc_title)} action={()=>props.navigation.goBack()}/>
-      <AppBar title={''} action={()=>props.navigation.goBack()}/>
+       <AppBar title={t(Locales.inheritance_calc_title)} action={()=>props.navigation.pop()}/>
+      <AppBar title={''} action={()=>props.navigation.pop()}/>
       <View style={styles.bodyContainer}>
-          <TouchableOpacity onPress={()=>props.navigation.goBack()} style={{ position:'relative',end:10,height:Dimension.convertH(25), top:Dimension.convertH(20),alignItems:'flex-end'}}>
+          <TouchableOpacity onPress={()=>props.navigation.pop()} style={{ position:'relative',end:10,height:Dimension.convertH(25), top:Dimension.convertH(20),alignItems:'flex-end'}}>
             <CustomSvg svgXmlData={AppIcons.close} fill={'#000000'} width={15} height={15} />
           </TouchableOpacity> 
           <View style={{flexDirection:'row',paddingHorizontal:10,marginVertical:10}}>
@@ -123,7 +123,9 @@ import AllData from './data';
             </ScrollView>
           </View> */}
       </View>
+   
     <FinishButton/>
+
    </View>
   
     );

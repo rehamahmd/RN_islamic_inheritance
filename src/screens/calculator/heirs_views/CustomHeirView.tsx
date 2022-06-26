@@ -8,7 +8,7 @@ import { setDeceasedGender } from "../../../client/actions/heirs_actions"
 import { StyleColors } from "../../../styles/colors"
 import { Dimension } from "../../../styles/dimensions"
 import { GenderEnum } from "../../enums/gender_enum"
-import { formStyle } from "../fome_syle"
+import { formStyle } from "../FormStyle"
 
 
 

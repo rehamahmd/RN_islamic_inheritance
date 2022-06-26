@@ -10,7 +10,7 @@ import { bindActionCreators } from 'redux';
 import { AppBar } from '../appbar';
 import { StyleColors } from '../../styles/colors';
 import { Dimension } from '../../styles/dimensions';
-import { formStyle } from '../calculator/fome_syle';
+import { formStyle } from '../calculator/FormStyle';
 
  const SelectLanguage = (props:any) => {
     const {  t ,i18n } = useTranslation()
@@ -42,8 +42,8 @@ import { formStyle } from '../calculator/fome_syle';
     }
     return (
      <View style={styles.mainContainer}>
-        <AppBar title={t(Locales.language_change_title)} action={()=>props.navigation.goBack()}/>
-        <AppBar title={''} action={()=>props.navigation.goBack()}/>
+        <AppBar title={t(Locales.language_change_title)} action={()=>props.navigation.pop()}/>
+        <AppBar title={''} action={()=>props.navigation.pop()}/>
         <View style={styles.bodyContainer}>
         <TouchableOpacity  onPress={() => _selectLanguage('ar')} style={styles.btnStyle}>  
           <View style={lang=='ar'?formStyle.selectedRadioView:formStyle.unselectedRadioView}>

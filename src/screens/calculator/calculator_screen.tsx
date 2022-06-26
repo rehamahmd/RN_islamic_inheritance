@@ -5,7 +5,7 @@ import { Dimension } from "../../styles/dimensions"
 import { AppBar } from "../appbar"
 import  DeceasedGender  from "./deceased_gender"
 import  CalculateButton  from "./calculate_button"
-import { formStyle } from "./fome_syle"
+import { formStyle } from "./FormStyle"
 import HusbandHeirView from "./heirs_views/spouse/HusbandHeirView"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
@@ -19,11 +19,12 @@ import  HeirAmount  from "./amount"
 
  function CalculatorScreen(props:any){
   const { t } = useTranslation();
+
    return <View style={styles.mainContainer}>
-    <AppBar title={t(Locales.inheritance_calc_title)} action={()=>props.navigation.goBack()}/>
-    <AppBar title={''} action={()=>props.navigation.goBack()}/>
+    <AppBar title={t(Locales.inheritance_calc_title)} action={()=>props.navigation.navigate("CustomDrawer")}/>
+    <AppBar title={''} action={()=>props.navigation.navigate("CustomDrawer")}/>
       <View style={styles.bodyContainer}>
-        <HeirCalculatorView/>
+        <HeirCalculatorView navigation={props.navigation}/>
       </View>
       {/* <View style={{position:'relative',top:'-5%'}}> */}
       <CalculateButton navigation={props.navigation}/> 

@@ -9,7 +9,7 @@ import { Dimension } from "../../../../styles/dimensions"
 import { GenderEnum } from "../../../enums/gender_enum"
 import { heirsEnum } from "../../../enums/heirs_enum"
 import { HeirModel, heirsWomen } from "../../../models/heir_model"
-import { formStyle } from "../../fome_syle";
+import { formStyle } from "../../FormStyle";
 import CounterUI from "../CounterUi";
 import CustomHeirView from "../CustomHeirView"
 

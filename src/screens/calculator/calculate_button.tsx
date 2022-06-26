@@ -12,12 +12,13 @@ import { Dimension } from '../../styles/dimensions';
 // import { mainColor } from '../../styles/colors';
 import { HeirModel } from '../models/heir_model';
 
-import { formStyle } from './fome_syle';
+import { formStyle } from './FormStyle';
 const CalculateButton = (props:any) => {
  const {heirCalc, calculateResult, navigation} = props; 
  const { t } = useTranslation();
  const calc = () => {
    calculateResult(heirCalc);
+   props.navigation.pop();
    props.navigation.navigate('CalculationChart');
  }
   return (

@@ -16,7 +16,8 @@ import { setDeceasedGender } from '../../client/actions/heirs_actions';
 import { Locales } from '../../locales/keys';
 import { StyleColors } from '../../styles/colors';
 import { Dimension } from '../../styles/dimensions';
-import { formStyle } from './fome_syle';
+import { AppStyle } from '../appStyle';
+import { formStyle } from './FormStyle';
 
 function CalculationPieChart (props:any) {
     const { t ,  i18n} = useTranslation();
@@ -70,8 +71,7 @@ useEffect(() => {
 
   }
 
-console.log("proofsssssssssssss");
-console.log(proofs);
+
     return (
       <View style={{flex: 1,backgroundColor:StyleColors.bgColor,}}>
         <View style={styles.container}>
@@ -111,21 +111,40 @@ console.log(proofs);
             onChange={(event) => console.log(event.nativeEvent)}
           />
         </View>
-      <View style={{height:Dimension.convertH(50)}}/>
+      <View style={{height:Dimension.convertH(10)}}/>
+     
       <View style={{flex:1}}>
-        <ScrollView>
+        <ScrollView> 
         {proofs.map((pro:any,i:number)=>{
           var _selectedEntry : any = selectedEntry;
           var share:number = _selectedEntry.value/100;
-         
           if(pro.quota == share){
           return <View key={i}>
-             <Text>{pro.causing}</Text>
-            <Text>{pro.name}</Text>
-            <Text>{pro.quota}</Text>
-            <Text>{_selectedEntry.count}</Text>
-            <Text>{pro.textAr}</Text>
-            <Text>{pro.Causing}</Text>
+             <View style={{flexDirection:'row'}}>
+              <Text style={[formStyle.title,formStyle.ArabicFontFamilyMedium,]}>الوارث</Text>
+              <View style={{width:100}}></View>
+              <Text style={[formStyle.title,formStyle.ArabicFontFamily]}>{`${t(pro.name)}`}</Text>
+            </View>
+  <View style={{height:5}}/>
+            <View style={{flexDirection:'row'}}>
+              <Text style={[formStyle.title,formStyle.ArabicFontFamilyMedium,]}>النسبة</Text>
+              <View style={{width:100}}></View>
+              <Text style={[formStyle.title,formStyle.ArabicFontFamily,]}>{`% ${_selectedEntry.data.value}`}</Text>
+            </View>
+  <View style={{height:5}}/>
+
+            <View style={{flexDirection:'row'}}>
+              <Text style={[formStyle.title,formStyle.ArabicFontFamilyMedium,]}>قيمة المبلغ</Text>
+              <View style={{width:70}}></View>
+              <Text style={[formStyle.title,formStyle.ArabicFontFamily,]}>{`${_selectedEntry.data.value*props.amount/100} ج.م `}</Text>
+            </View>
+  <View style={{height:5}}/>
+
+            <View style={{flexDirection:'column'}}>
+              <Text style={[formStyle.title,formStyle.ArabicFontFamilyMedium,]}>الدليل</Text>
+              <Text style={[formStyle.title,formStyle.ArabicFontFamily,{paddingEnd:44}]}>{pro.textAr}</Text>
+            </View>
+            
           </View>}}
         )}
         </ScrollView>
@@ -141,7 +160,8 @@ const styles = StyleSheet.create({
   },
   chart: {
     flex: 1
-  }
+  },
+
 });
 
 
@@ -149,11 +169,11 @@ function mapStateToProps({heirs}:any)  {
     var allCount = [];
     var colorsList = [];
     var result = heirs.calcResult;
-    
+    const { t } = useTranslation();
     result.sort(function(a:any, b:any){return ((b.share.n)/(b.share.d))-(a.share.n)/(a.share.d)});
     for(var i =0;i<result.length;i++ ){
         var color = heirs.allHeirs[result[i].name].color;
-        var label = result[i].name;
+        var label = t(result[i].name);
         var share = parseFloat(((result[i].share.n/result[i].share.d)*100).toFixed(2));
         allCount.push({value:share,label:label,proofs:heirs.allHeirs[result[i].name].proof ?? []}),
         colorsList.push(processColor(color))

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
   import {
     Alert,
     Animated,
@@ -10,11 +11,12 @@ import React from 'react';
   import { CurvedBottomBar } from 'react-native-curved-bottom-bar';
 
   import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Locales } from '../../locales/keys';
 import { StyleColors } from '../../styles/colors';
 import { Dimension } from '../../styles/dimensions';
 import { TextStyles } from '../../styles/text';
 import ArticlesScreen from '../articles/ArticlesScreen';
-import { formStyle } from '../calculator/fome_syle';
+import { formStyle } from '../calculator/FormStyle';
 import CustomSvg from '../custom_svg';
 import HomeScreen from '../home_screen';
 import { AppIcons } from '../icons';
@@ -22,17 +24,18 @@ import SplashScreen from '../splash_screen';
 import Home from './home';
 
   export const CustomTabBar = (props:any) => {
+    const { t } = useTranslation();
     const _renderIcon = (routeName: string, selectedTab: string) => {
       let icon = '';
       let title = '';
       switch (routeName) {
         case 'title1':
           icon = AppIcons.home;
-          title = 'الرئيسية';
+          title = t(Locales.home_main);
           break;
         case 'title2':
-          icon = AppIcons.blackBookMark;
-          title = 'المحفوظات';
+          icon = AppIcons.filledBookmark;
+          title = t(Locales.home_bookmarks);
           break;
       }
       return (

@@ -5,6 +5,7 @@ import React, { Component, useState, useEffect } from 'react';
 
  export default function SplashScreen(props:any){
     useEffect(() => {
+        
         setTimeout(function(){  
             props.navigation.navigate('Home')
           }, 200); 
