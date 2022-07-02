@@ -86,7 +86,7 @@ subtitle:{
  
 },
 boxShadowStyle:{
-    shadowColor: "#000",
+    shadowColor: "#ccc",
     shadowOffset: {
       width: 0,
       height: 2,

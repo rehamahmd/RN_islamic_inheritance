@@ -1,7 +1,14 @@
 export enum Locales { // camel case
 
     appName = 'appName',
-
+    heirs_men = 'heirs_men',
+    heirs_women = 'heirs_women',
+    set_amount='set_amount',
+    amount='amount',
+    details='details',
+    gender='gender',
+    male='male',
+    female = 'female',
     husband= 'husband', // زوج
     wife= 'wife',
     // Descendants احفاد
@@ -38,6 +45,9 @@ export enum Locales { // camel case
     // CALC SCREEN
     inheritance_calc_title = "inheritance_calc_title",
     calculate = "calculate",
+    isHusbandExist = 'isHusbandExist',
+    yes='yes',
+    no='no',
 
     // Language
     language_change_title = "language_change_title",
@@ -60,10 +70,28 @@ export enum Locales { // camel case
     quran_and_sunna = "quran_and_sunna",
     questions_and_answers = "questions_and_answers",
     inheritance_law = "inheritance_law",
-
+    inheritance_law_subtitle="inheritance_law_subtitle",
     home_more = "home_more",
     home_main = "home_main",
     home_bookmarks = "home_bookmarks",
 
 
+    //chart
+    heir= "heir",
+    causing= "causing",
+    proofType= "proofType",
+    noQVerse= "noQVerse",
+    surahQName= "surahQName",
+    textAr= "textAr",
+    heir_type="heir_type",
+    share_type="share_type",
+    heir_count="heir_count",
+    share_fraction="share_fraction",
+    share_percentage="share_percentage",
+    legal_guide="legal_guide",
+    actual_heirs='actual_heirs',
+    currency='currency',
+    rules ='rules',
+
+    
  }

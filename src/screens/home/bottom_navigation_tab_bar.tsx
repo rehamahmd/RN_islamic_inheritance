@@ -9,20 +9,21 @@ import { useTranslation } from 'react-i18next';
     View,
   } from 'react-native';
   import { CurvedBottomBar } from 'react-native-curved-bottom-bar';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-  import Ionicons from 'react-native-vector-icons/Ionicons';
-import { Locales } from '../../locales/keys';
-import { StyleColors } from '../../styles/colors';
-import { Dimension } from '../../styles/dimensions';
-import { TextStyles } from '../../styles/text';
-import ArticlesScreen from '../articles/ArticlesScreen';
-import { formStyle } from '../calculator/FormStyle';
-import CustomSvg from '../custom_svg';
-import HomeScreen from '../home_screen';
-import { AppIcons } from '../icons';
-import SplashScreen from '../splash_screen';
-import Home from './home';
-
+  import { Locales } from '../../locales/keys';
+  import { StyleColors } from '../../styles/colors';
+  import { Dimension } from '../../styles/dimensions';
+  import { TextStyles } from '../../styles/text';
+  import ArticlesScreen from '../articles/ArticlesScreen';
+  import { formStyle } from '../calculator/FormStyle';
+  import CustomSvg from '../custom_svg';
+  import HomeScreen from '../home_screen';
+  import { AppIcons } from '../icons';
+  import SplashScreen from '../splash_screen';
+  import Home from './home';
+  import {resetData} from '../../client/actions/heirs_actions';
   export const CustomTabBar = (props:any) => {
     const { t } = useTranslation();
     const _renderIcon = (routeName: string, selectedTab: string) => {
@@ -84,7 +85,10 @@ import Home from './home';
                   flex: 1,
                   justifyContent: 'center',
                 }}
-                onPress={() => props.navigation.push('CalculatorScreen')}>
+                onPress={() =>{
+                  props.resetData();
+                  props.navigation.push('CalculatorScreen')
+                }}>
                 <CustomSvg
                   width={20}
                   height={20}
@@ -157,3 +161,13 @@ import Home from './home';
       height: 30,
     },
   });
+
+  
+
+
+const mapDispatchToProps = (dispatch:any) => (
+  bindActionCreators({
+    resetData,
+  }, dispatch)
+);
+export default connect(null, mapDispatchToProps)(CustomTabBar)

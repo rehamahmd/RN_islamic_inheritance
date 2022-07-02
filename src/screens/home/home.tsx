@@ -13,9 +13,6 @@ import { Locales } from '../../locales/keys';
 
 
 
-
-
-
 function Home (props:any)  {
   const { t } = useTranslation();
   return (
@@ -49,14 +46,12 @@ function Home (props:any)  {
             <View style={{height:10}}/>
             
             <View style={{flexDirection:'row',justifyContent:'space-between', width:'90%',height:110}}>
-            <HomeCategoryCard text={t(Locales.questions_and_answers)} textColor="#52BCF0"  color='#BBDAE9' imagePath={require('../../assets/images/question-mark.png')}/>
-            <HomeCategoryCard text={t(Locales.quran_and_sunna)} textColor="#E85481" color="#F2E0E8" style={{ height: Dimension.convertH(45),marginTop:10,marginStart:10}}  imagePath={require('../../assets/images/koran.png')}/>
-            <HomeCategoryCard text={t(Locales.inheritance_law)} textColor="#F26F58" color='#FEF5DD' style={{marginTop:4,marginStart:12}} imagePath={require('../../assets/images/balance.png')}/>
+            {/* <HomeCategoryCard text={t(Locales.questions_and_answers)} textColor="#52BCF0"  color='#BBDAE9' imagePath={require('../../assets/images/question-mark.png')}/> */}
+            {/* <HomeCategoryCard text={t(Locales.inheritance_law)} textColor={StyleColors.Color0} color={'#D6D5EC'} style={{ height: Dimension.convertH(45),marginTop:0,marginStart:10}}  imagePath={require('../../assets/images/balance.png')}/> */}
+            <HomeCategoryCard navigation={props.navigation} text={t(Locales.inheritance_law)} textColor="#F26F58" color='#FEF5DD' style={{marginTop:4,marginStart:12}} imagePath={require('../../assets/images/balance.png')}/>
             </View>
          </View>
-         
          <HomeArticlesSection />
-        
     </View>
     
   );
@@ -68,13 +63,13 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor:'#F3F8FE'
+    backgroundColor:StyleColors.bgColor
    
   },
   scrollviewStyle:{
     flex: 1,
     width: '100%',
-    backgroundColor:'#F3F8FE'
+    backgroundColor:StyleColors.bgColor
   },
   title: {
     fontSize: 20,

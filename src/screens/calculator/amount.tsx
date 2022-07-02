@@ -23,7 +23,7 @@ const HeirAmount = (props:any) => {
  
   return (
     <View style={styles.bodyContainer}>
-           <Text style={[styles.btnText,formStyle.ArabicFontFamily]}>{'ادخل المبلغ'}</Text>
+           <Text style={[styles.btnText,formStyle.ArabicFontFamily]}>{ t(Locales.set_amount)}</Text>
            <TextInput onChangeText={(v)=>_setAmount(v)} keyboardType="numeric" style={{width:Dimension.convertW(160),height:Dimension.convertH(40), borderBottomWidth:1,borderBottomColor:StyleColors.Color0,textAlign:'center'}}/>
     </View>
   );

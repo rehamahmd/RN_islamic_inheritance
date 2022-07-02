@@ -55,8 +55,7 @@ import { Dimension } from './styles/dimensions';
     };
 
     let file = await RNHTMLtoPDF.convert(options)
-    console.log("file.filePath....................................");
-    console.log(file.filePath);
+
     setFileSaved(file.filePath??"");
   }
 
@@ -64,9 +63,7 @@ import { Dimension } from './styles/dimensions';
     await createPDF();
     var path = downloadsFolder + '/inheritance.pdf';
     var fileSaved2 = fileSaved;
-    console.log("content.content....................................");
-    console.log(path);
-    console.log(fileSaved2);
+
     RNFetchBlob.fs.cp(fileSaved, path)
     // RNFS.writeFile(path, content, 'utf8')
      .then(() => {

@@ -28,6 +28,7 @@
     "@types/react-native-charts-wrapper": "^0.5.2",
     "@types/react-redux": "^7.1.24",
     "@types/redux": "^3.6.0",
+    "axios": "^0.27.2",
     "concurrently": "^7.1.0",
     "deprecated-react-native-prop-types": "^2.3.0",
     "fraction.js": "^4.0.12",

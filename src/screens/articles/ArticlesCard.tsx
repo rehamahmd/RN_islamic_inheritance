@@ -1,21 +1,21 @@
 import React from "react"
 import {View, Dimensions, Image, Text, TouchableOpacity, StyleSheet } from "react-native"
+import i18n from "../../locales"
 import { StyleColors } from "../../styles/colors"
 import { Dimension } from "../../styles/dimensions"
 import { formStyle } from "../calculator/FormStyle"
-import CustomSvg from "../custom_svg"
-import { AppIcons } from "../icons"
+
 
 
 export const ArticlesCard = ({item, navigation}:any) => {
     return   (<View key={item} style={styles.mainCardStyle}>
         <TouchableOpacity>
             <View style={{ marginStart:10, borderRadius:10, justifyContent:'center',backgroundColor:'white', width:Dimension.convertH(90),height:Dimension.convertH(90)}}>
-              <Image source={{uri:item.image}}  style={[{width: Dimension.convertH(90), height: Dimension.convertH(70), resizeMode: 'contain'}]} /> 
+              <Image source={item.image!=null?{uri:item.image}: require("../../assets/images/inh3.png")}  style={[{width: Dimension.convertH(90), height: Dimension.convertH(70), resizeMode: 'contain'}]} /> 
             </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={()=>navigation.navigate("ArticlesDetails",item)} style={{width:'65%', paddingHorizontal:10, justifyContent:'center',backgroundColor:'white', height:Dimension.convertH(90)}}>
-            <Text numberOfLines={2} ellipsizeMode='tail' style={[styles.title,formStyle.ArabicFontFamilyMedium,{ color:'#2E2F42',fontSize:16,lineHeight:25 }]}>{item.title}</Text>
+            <Text numberOfLines={2} ellipsizeMode='tail' style={[styles.title,formStyle.ArabicFontFamilyMedium,{ color:'#2E2F42',fontSize:16,lineHeight:25 }]}>{i18n.language == 'ar'? item.title: item.titleEn}</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={()=>item.isSaved = !item.isSaved}>
             <View style={{width:"20%",height:'100%', justifyContent:'flex-start',position:'relative', end:15,top:15 }}>

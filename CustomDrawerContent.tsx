@@ -17,15 +17,17 @@ export default function CustomDrawerContent(props:any) {
   const {t} = useTranslation();
   return (
       <View style={{ flex:1,  width: 180, justifyContent: 'space-between', alignItems:'center' }}>
+         <View style={{ flex:1,  width: 180, justifyContent:'center',alignItems:'center'}}>
         <Image source={require(image)}  style={{
           height: 60,
+          width: 80,
           borderRadius: 10,
           marginTop: 40,
-          marginBottom: 20,
+          marginBottom: 0,
           resizeMode: 'contain'
-        }}/>
+        }}/></View>
         <Text style={formStyle.formTitle}>{t(Locales.appName)}</Text>
-        <View style={{ flexGrow: 1, marginTop: 50 }}>
+        <View style={{ flexGrow: 1, marginTop: 30 }}>
           {TabButton(currentTab,()=> {
             props.onPressMenu();
            

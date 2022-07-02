@@ -3,7 +3,7 @@
 import { GenderEnum } from "../../screens/enums/gender_enum";
 import { heirsEnum } from "../../screens/enums/heirs_enum";
 import { allCalcHeirs, allHeirsForView, HeirModel, heirsMen, heirsWomen, spouse } from "../../screens/models/heir_model";
-import { ADD_DESCENDANTS_HEIRS, ADD_SPOUSE_HEIR, SET_DECEASED_GENDER, SET_HEIR_NUMBERS,SET_CALCULATION_RESULT, SET_AMOUNT } from "../constants";
+import { ADD_DESCENDANTS_HEIRS, ADD_SPOUSE_HEIR, SET_DECEASED_GENDER, SET_HEIR_NUMBERS,SET_CALCULATION_RESULT, SET_AMOUNT ,GET_DATA} from "../constants";
 
 import _ from "lodash";
 
@@ -12,12 +12,16 @@ const initialState = {
   gender: GenderEnum.male,
   amount: 0,
   allHeirs: allHeirsForView,
+  heirsData:[],
   spouse: spouse,
   currentHeir: HeirModel,
   heirs: allCalcHeirs,
   heirsWomen: heirsWomen,
   heirsMen: heirsMen,
-  calcResult: []
+  calcResult: [],
+  data:[],
+  selectedHeirs:{}
+  
 };
 
 export default function heirsReducer(state = initialState, action:any) {
@@ -61,7 +65,28 @@ export default function heirsReducer(state = initialState, action:any) {
              ...state,
              amount:action.payload
            } 
-           
+           case GET_DATA:{
+            return {
+              ...state,
+              heirsData: action.payload,
+            
+            }
+           }
+
+           case 'RESET_DATA':{
+            return {
+              ...state,
+              state:initialState
+            } 
+           }
+           case 'SET_SELECTED_HEIRS':{
+          
+            return {
+              ...state,
+              selectedHeirs:action.payload
+            } 
+           }
+
     default:
       return state;
   }

@@ -4,58 +4,41 @@ import { Animated, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CustomDrawerContent from './CustomDrawerContent';
-import { setAppLanguage, getArticles } from './src/client/actions/app_actions';
+import { setAppLanguage, getArticles,getAllHeirsData } from './src/client/actions/app_actions';
 import { ApisClient } from './src/client/apis_client';
 import { SharedPreference } from './src/client/SharedPreference';
 import i18n from './src/locales';
-import { CustomTabBar } from './src/screens/home/bottom_navigation_tab_bar';
+import CustomTabBar  from './src/screens/home/bottom_navigation_tab_bar';
 import { StyleColors } from './src/styles/colors';
 
  function CustomDrawer(props:any) {
   var image = './src/assets/app_logo.png';
   const [currentTab, setCurrentTab] = useState("Home");
-  // To get the curretn Status of menu ...
+ 
   const [showMenu, setShowMenu] = useState(false);
   const [articles, setArticles] = useState([]);
 
-  // Animated Properties...
+ 
 
   const offsetValue = useRef(new Animated.Value(0)).current;
-  // Scale Intially must be One...
   const scaleValue = useRef(new Animated.Value(1)).current;
   const closeButtonOffset = useRef(new Animated.Value(0)).current;
 
   const onPressMenu = () => {
-      // Animated.timing(scaleValue, {
-      //   toValue: showMenu ? 1 : 0.88,
-      //   duration: 300,
-      //   useNativeDriver: true
-      // })
-      //   .start()
       Animated.timing(offsetValue, {
         toValue: showMenu ? 0 : i18n.language == 'ar'? -230: 230,
         duration: 300,
         useNativeDriver: true
       })
         .start()
-      // Animated.timing(closeButtonOffset, {
-      //   toValue: 0,
-      //   duration: 300,
-      //   useNativeDriver: true
-      // })
-      //   .start()
       setShowMenu(!showMenu);
   }
 
   
 
   useEffect(() => {
-    ApisClient.getArticlesAndSaveToSharedPref()
-    props.getArticles();
-    var articles = SharedPreference.articles;
-    setArticles(articles);
-    console.log("articles..............................");
-    console.log(articles);
+
+    props.getAllHeirsData();
   }, []);
 
   return (
@@ -92,8 +75,7 @@ const styles = StyleSheet.create({
 
 
 function mapStateToProps({App}:any)  {
-  console.log("App.language");
-  console.log(App.appLanguage);
+
   return { 
 
   //  language:App.appLanguage
@@ -106,6 +88,7 @@ function mapStateToProps({App}:any)  {
 const mapDispatchToProps = (dispatch:any) => (
   bindActionCreators({
     setAppLanguage,
+    getAllHeirsData,
     getArticles
   }, dispatch)
 );

@@ -18,9 +18,6 @@ import { formStyle } from '../calculator/FormStyle';
 
 
     const _changeLanguage = async () => {
-      console.log("SSSSSSSSSSSSSSSSSSSSS CHANG LANG")
-      console.log(lang);
-      // props.setAppLanguage(lang);
        await i18n.changeLanguage(lang);
        const isLangRTL = lang === 'ar';
         if (isLangRTL) {
@@ -146,10 +143,7 @@ import { formStyle } from '../calculator/FormStyle';
 })
    
 function mapStateToProps({App}:any)  {
-    return { 
-  
-    //  language:App.appLanguage
-   }
+    return {}
   };
   
   

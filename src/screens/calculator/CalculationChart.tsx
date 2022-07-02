@@ -48,37 +48,14 @@ import AllData from './data';
     }
   }
 
-  // const getProof = () => {
-  //   var data = AllData;
-  //   for (var i in props.calcResult){
-  //     for (var j in data){
-  //       console.log("----------ddddd---------------");
-
-  //        if(props.calcResult[i].name == data[j].name){
-  //          var share = parseFloat(((props.calcResult[i].share.n/props.calcResult[i].share.d)).toFixed(3));
-  //          console.log("----------aaaaaaaaaa---------------");
-  //          console.log(share);
-  //          console.log(data[j].quota);
-
-  //          if(share == data[j].quota){
-  //           proof.push(data[j]);
-  //           }
-  //        }
-  //     }
-  //    }
-  //    console.log(proof);
-  // }
-  // calcResult();
   useEffect(() => {
     if (isInitialRender) {
       setIsInitialRender(false);
       calcResult();
-      // getProof();
+    
     }
   },[names,series,cl,co, colorsList,isInitialRender]);
   const widthAndHeight = Dimension.convertW(125);
-  console.log("ppppppppppppppppppppppppp");
-  console.log(proof);
     return (
       <View style={styles.mainContainer}>
        <AppBar title={t(Locales.inheritance_calc_title)} action={()=>props.navigation.pop()}/>
@@ -87,45 +64,15 @@ import AllData from './data';
           <TouchableOpacity onPress={()=>props.navigation.pop()} style={{ position:'relative',end:10,height:Dimension.convertH(25), top:Dimension.convertH(20),alignItems:'flex-end'}}>
             <CustomSvg svgXmlData={AppIcons.close} fill={'#000000'} width={15} height={15} />
           </TouchableOpacity> 
-          <View style={{flexDirection:'row',paddingHorizontal:10,marginVertical:10}}>
+          {props.amount==0?<Text></Text>:<View style={{flexDirection:'row',paddingHorizontal:10,marginVertical:5}}>
           <Text style={[formStyle.title,{fontSize:30}]}></Text>
-       
           <Text style={[formStyle.title,{fontSize:30}]}>{props.amount.toString()}</Text>
           <View style={{width:10}}/>
-          <Text style={[formStyle.title,{fontSize:30}]}>ج.م</Text>
-
-          </View>
-          {/* <View style={{width:'100%',height:200, flexDirection:'row',justifyContent:'center'}}> */}
-            <CalculationPieChart proof={proof} p={props.calcResult} chartColorsList={colorsList} cl={cl} names={names}/>
-            {/* <View style={{position:'relative',top:Dimension.convertW(49),left:Dimension.convertW(-72)}}><Text>300</Text></View> */}
-          {/* </View> */}
-          {/* <View style={{height:'10%'}}>
-           
-          </View>
-          <View style={{height:'40%'}}>
-            <ScrollView>
-              {proof.map((p,i)=>{
-                console.log("iiiiiiiiiiiiii");
-                console.log(p.textAr);
-                console.log(p.causing);
-                return <View key={i} style={{flexDirection:'column',height:60,alignItems:'flex-start'}}>
-               
-                <Text style={[formStyle.formTitle,{color:'black'}]}>{p.textAr}</Text>
-                <Text>{p.name}</Text>
-                <Text>{p.proofType}</Text>
-                <Text>{p.quota}</Text>
-                <Text style={[formStyle.formTitle,{color:'black'}]}>{p.causing}</Text>
-                   <HeirSlider color={cl[i]} width={series[i]}/>
-                </View>
-                
-              })}
-            
-            </ScrollView>
-          </View> */}
+          <Text style={[formStyle.title,{fontSize:30}]}>{t(Locales.currency)}</Text>
+          </View>}
+          <CalculationPieChart selectedHeirs={props.selectedHeirs} proof={proof} p={props.calcResult} chartColorsList={colorsList} cl={cl} names={names}/>
       </View>
-   
-    <FinishButton/>
-
+    <FinishButton navigation={props.navigation}/>
    </View>
   
     );
@@ -152,10 +99,6 @@ title: {
     fontSize: 16,
   },
   container: {
-    // flex: 1,
-    // width: '100%',
-    // alignItems: 'center',
-    // justifyContent: 'center'
   },
   
 });
@@ -164,10 +107,10 @@ title: {
 
 function mapStateToProps({heirs}:any)  {
   return { 
-  
    heirs: heirs.heirs,
    allHeirs:heirs.allHeirs,
    calcResult:heirs.calcResult,
+   selectedHeirs:heirs.selectedHeirs,
    amount:heirs.amount
  }
 };

@@ -1,41 +1,41 @@
 
 const en = {
     appName: 'Inheritance',
-    
-   husband: 'husband', // زوج
-   wife: 'wife',
-   // Descendants احفاد
-   son: 'son',
-   daughter: 'daughter',
-   paternal_grand_son:  'paternal_grand_son', // بن الابن
-   paternal_grand_daughter: 'paternal_grand_daughter', //بنت الابن
-   
-   // Ancestors اسلاف
-   father:   'father',
-   mother:   'mother',
-   paternal_grand_father:  'paternal_grand_father', // الجد لأب
-   paternal_grand_mother:  'paternal_grand_mother', // الجدة لأب
-   maternal_grand_mother:  'maternal_grand_mother', //  الجدة لأم
-   
-   // Sibling // إخوة
-   full_brother:   'full_brother', // الأخ الشقيق
-   full_sister:  'full_sister', // اخت شقيقة
-   paternal_sister:   'paternal_sister', // أخت لأب
-
-   paternal_brother:   'paternal_brother', // شقيق الأب
-   maternal_sibling:   'maternal_sibling', // شقيق الأم
-   
-   // Other // اخري
-   full_nephew:   'full_nephew', //   ابن أخ الشقيق
-   paternal_nephew:  'paternal_nephew', // ابن اخ الأب
-
-   full_paternal_uncle:  'full_paternal_uncle', // العم الشقيق 
-   paternal_paternal_uncle:  'paternal_paternal_uncle', //  عم الأب
-   full_cousin:  'full_cousin', //ابن عم شقيق
-   paternal_cousin:  'paternal_cousin', // ابن عم الأب
+    heirs_men :'Men',
+    heirs_women : 'Women',
+    details:'Details',
+    gender:'Gender',
+    male:'Male',
+    female : 'Female',
+    set_amount:'Set Amount',
+    amount:'amount',
+    wife: "Wife",
+    son: "Son",
+    daughter: "Daughter",
+    paternal_grand_son: "Paternal GrandSon",
+    paternal_grand_daughter: "Paternal GrandDaughter",
+    father: "Father",
+    mother: "Mother",
+    paternal_grand_father: "Paternal GrandFather",
+    paternal_grand_mother: "Paternal GrandMother",
+    maternal_grand_mother: "Maternal GrandMother",
+    full_brother: "Full Brother",
+    full_sister: "Full Sister",
+    paternal_sister: "Paternal Sister",
+    paternal_brother: "Paternal Brother",
+    maternal_sibling: "Maternal Sibling",
+full_nephew: "Full Nephew",
+    paternal_nephew: "Paternal Nephew",
+    full_paternal_uncle: "Full Paternal Uncle",
+    paternal_paternal_uncle: "Paternal Paternal Uncle",
+    full_cousin: "Full Cousin",
+    paternal_cousin: "Paternal Cousin",
     // calc screen
     inheritance_calc_title : "Inheritance Calculation",
     calculate:"Calculate",
+    isHusbandExist : 'Is Husband Exist',
+    yes:'Yes',
+    no:'No',
 
     // language
     language_change_title: "Change Language",
@@ -56,11 +56,27 @@ const en = {
 
     quran_and_sunna : "Quran & Sunna",
     questions_and_answers : "Questions & Answers",
-    inheritance_law : "Inheritance Law",
-
+    inheritance_law : "Inheritance Rules",
+    inheritance_law_subtitle : "The Logical rules of the calculation based on Azhar inheritance Jurisprudence",
     home_more: "more",
     home_main: "Home",
     home_bookmarks: "Bookmarks",
+
+    //chart
+    heir: "Heir",
+    causing: "Causing",
+    proofType: "Proof Type",
+    noQVerse: "noQVerse",
+    surahQName: "Surah Quran Name",
+    textAr: "Text Ar",
+    heir_type: "Heir type",
+    share_type: "Share Type",
+    heir_count: "No. of heirs",
+    share_fraction: "Share Fraction",
+    share_percentage: "Share Percentage",
+    actual_heirs: 'Actual heirs Percentage',
+    currency:'L.E',
+    rules:'Rules',
 
 };
 export default en;

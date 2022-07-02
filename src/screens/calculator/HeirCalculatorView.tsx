@@ -17,9 +17,11 @@ import CustomHeirView from "./heirs_views/CustomHeirView"
 import HeirAmount from './amount'
 import CustomSvg from "../custom_svg"
 import { AppIcons } from "../icons"
+import { Locales } from "../../locales/keys"
 
  const HeirCalculatorView = (props:any) => {
-  const { i18n } = useTranslation(); 
+  const { i18n, t } = useTranslation(); 
+  
   const {setHeirNumbers, gender,heirsWomen, heirsMen} = props;
   const plusAction = (key:string, heir:HeirModel) => {
     if(heir.count == heir.maxCount) return;
@@ -32,8 +34,7 @@ import { AppIcons } from "../icons"
     --heir.count;
     setHeirNumbers(key, heir.count)
   }
-  console.log("ppppppppppppppppppppppppp");
-  console.log(props.navigation);
+
   return <View style={{flex:1}}>
     <TouchableOpacity onPress={()=>props.navigation.goBack()} style={{position:'relative',end:10,height:Dimension.convertH(25), top:Dimension.convertH(20),alignItems:'flex-end'}}>
       <CustomSvg svgXmlData={AppIcons.close} fill={'#000000'} width={15} height={15} />
@@ -44,7 +45,7 @@ import { AppIcons } from "../icons"
         <View style={{marginVertical:Dimension.convertH(15),width:'100%', flexDirection:'row',justifyContent:'flex-start',alignItems:'center'}}>
            <CustomSvg svgXmlData={AppIcons.details}  width={15} height={15} />
            <View style={{width:5}}/>
-           <Text style={formStyle.title}>بيانات المورث</Text>
+           <Text style={formStyle.title}>{ t(Locales.details)}</Text>
         </View>
         <DeceasedGender />
         {props.gender == GenderEnum.male?  <HusbandHeirView /> : <WifeHeirView/> }
@@ -53,7 +54,7 @@ import { AppIcons } from "../icons"
     <View style={{marginVertical:Dimension.convertH(15),width:'100%', flexDirection:'row',justifyContent:'flex-start',alignItems:'center'}}>
            <CustomSvg svgXmlData={AppIcons.man}  width={15} height={15} />
            <View style={{width:5}}/>
-           <Text style={formStyle.title}>الورثة من الرجال</Text>
+           <Text style={formStyle.title}>{ t(Locales.heirs_men)}</Text>
         </View>
 
     {Object.keys(heirsMen).map((key:any, i:number)=>{
@@ -62,7 +63,7 @@ import { AppIcons } from "../icons"
       <View style={{marginVertical:Dimension.convertH(15),width:'100%', flexDirection:'row',justifyContent:'flex-start',alignItems:'center'}}>
           <CustomSvg svgXmlData={AppIcons.woman}  width={15} height={15} />
           <View style={{width:5}}/>
-          <Text style={formStyle.title}>الورثة من النساء</Text>
+          <Text style={formStyle.title}>{ t(Locales.heirs_women)}</Text>
       </View>
     {Object.keys(heirsWomen).map((key:any, i:number)=>{
       return <CustomHeirView key={i} heirModel={heirsWomen[key]} plusAction={() => plusAction(key,heirsWomen[key])} minusAction={() => minusAction(key, heirsWomen[key])}/>
@@ -77,7 +78,7 @@ function mapStateToProps({heirs}:any)  {
    allHeirs: heirs.allHeirs,
    heirsWomen: heirs.heirsWomen,
    heirsMen: heirs.heirsMen,
-   
+   heirsData: heirs.heirsData,
    gender: heirs.gender
  }
 };

@@ -1,7 +1,14 @@
 
 const ar = {
     appName:'الميراث',
-      
+    details:'بيانات المورث',
+    gender:'النوع',
+    male:'ذكر',
+    female : 'انثي',
+    set_amount: 'ادخل المبلغ',
+    amount:'المبلغ',
+    heirs_men :'الورثة من الرجال',
+    heirs_women : 'الورثة من النساء',
     husband: 'الزوج', // زوج
     wife: 'الزوجة',
     // Descendants احفاد
@@ -38,7 +45,9 @@ const ar = {
    // calc screen
    inheritance_calc_title : "حساب نسبة المواريث",
    calculate:"احسب",
-
+   isHusbandExist : 'هل الزوج موجود',
+   yes:'نعم',
+   no:'لا',
    // language
    language_change_title: "تغيير اللغة",
    language_arabic: "العربيه",
@@ -57,11 +66,33 @@ const ar = {
 
    quran_and_sunna : "قرأن /n وسنه",
    questions_and_answers : "اسئله واجابات",
-   inheritance_law : "قانون المواريث",
-
+   inheritance_law : "قواعد المواريث",
+   inheritance_law_subtitle : "القواعد المنطقية لحساب المواريث طبقا لفقة الأزهر الشريف",
    home_more: "المزيد",
    home_main: "الرئيسية",
    home_bookmarks: "المحفوظات",
+
+
+
+   // chart
+   heir: "الوريث",
+   causing: "السبب",
+   proofType: "المصدر ",
+   noQVerse: "رقم الايه",
+   surahQName: "السوره",
+   textAr: "النص",
+  
+   heir_type: "أنواع الورثة",
+  share_type: "نوع المشاركه",
+  heir_count: "أعداد الورثة",
+  share_fraction: "حصة الكسر",
+  share_percentage: "نسبة المشاركة",
+  
+  legal_guide: "الدليل الشرعى",
+  actual_heirs: 'نسبة الورثة الفعليين',
+  currency:'ج.م',
+
+  rules:'قواعد'
 };
 
 export default ar;

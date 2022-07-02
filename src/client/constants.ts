@@ -8,4 +8,5 @@ export const SET_CALCULATION_RESULT = 'SET_CALCULATION_RESULT';
 export const SET_AMOUNT = 'SET_AMOUNT';
 export const SET_APP_LANGUAGE = 'SET_APP_LANGUAGE';
 export const SET_ARTICLES = 'SET_ARTICLES';
+export const GET_DATA = 'GET_DATA';
 

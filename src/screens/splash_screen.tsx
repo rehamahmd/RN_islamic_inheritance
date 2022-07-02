@@ -1,14 +1,15 @@
 import React, { Component, useState, useEffect } from 'react';  
  import { Platform, StyleSheet, View, Text,  
  Image, TouchableOpacity, Alert } from 'react-native';  
+import { ApisClient } from '../client/apis_client';
 
 
  export default function SplashScreen(props:any){
     useEffect(() => {
-        
+        ApisClient.getArticlesAndSaveToSharedPref();
         setTimeout(function(){  
-            props.navigation.navigate('Home')
-          }, 200); 
+            props.navigation.navigate('CustomDrawer')
+          }, 300); 
       
       }, []);
      return <View style={styles.SplashScreen_RootView}>  

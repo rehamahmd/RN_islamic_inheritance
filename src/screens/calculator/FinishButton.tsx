@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { calculateResult } from '../../client/actions/heirs_actions';
 import { Locales } from '../../locales/keys';
-import SavePdfComponent from '../../SavePdfComponent';
+// import SavePdfComponent from '../../SavePdfComponent';
 import { StyleColors } from '../../styles/colors';
 import { Dimension } from '../../styles/dimensions';
 // import { mainColor } from '../../styles/colors';
@@ -17,16 +17,20 @@ import { formStyle } from './FormStyle';
 const FinishButton = (props:any) => {
  const {heirCalc, calculateResult, navigation} = props; 
  const { t } = useTranslation();
- const calc = () => {
+ console.log( props.navigation);
+console.log( "propsaaaaaaaaaaa");
+console.log( props);
+console.log( props);
+ const navigateBack = () => {
 
-   props.navigation.navigate('CalculatorScreen');
+   props.navigation.goBack();
  }
   return (
     <View style={styles.btnContainer}>
-        <TouchableOpacity style={styles.btn} onPress={()=>calc()}>
-          <Text style={[styles.btnText,formStyle.ArabicFontFamilyMedium]}>{'مسألة جديدة'}</Text>
+        <TouchableOpacity style={styles.btn} onPress={()=>navigateBack()}>
+          <Text style={[styles.btnText,formStyle.ArabicFontFamilyMedium]}>{t(Locales.home_main)}</Text>
         </TouchableOpacity>
-        <SavePdfComponent />
+        {/* <SavePdfComponent /> */}
     </View>
   );
 };
