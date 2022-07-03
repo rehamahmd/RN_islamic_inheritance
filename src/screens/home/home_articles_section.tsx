@@ -23,7 +23,6 @@ export default function HomeArticlesSection(props:any){
       setTimeout(() => {
         setLoading(false);
         setArticles(ApisClient.articles)
-        console.log("aaaa")
         }, 5000);
     
     }, []);
@@ -34,7 +33,7 @@ export default function HomeArticlesSection(props:any){
     return <View style={styles.maincontainer}>
         <View style={styles.screenContainer}>
             <Text style={[formStyle.title,styles.title,{ color:'#2E2F42', }]}>{t(Locales.menu_articles)}</Text>
-            <TouchableOpacity onPress={navigateToArticles} ><Text style={[formStyle.title,{color:'#2E2F42',fontSize:11 ,textAlignVertical:'center'}]}>{''}<CustomSvg svgXmlData={i18n.language == 'ar'? AppIcons.backwardArrowGreySvg: AppIcons.forwardArrowSvg} width={8} height={8}/></Text></TouchableOpacity>
+            {/* <TouchableOpacity onPress={navigateToArticles} ><Text style={[formStyle.title,{color:'#2E2F42',fontSize:11 ,textAlignVertical:'center'}]}>{''}<CustomSvg svgXmlData={i18n.language == 'ar'? AppIcons.backwardArrowGreySvg: AppIcons.forwardArrowSvg} width={8} height={8}/></Text></TouchableOpacity> */}
         </View>
         {(loading) ? <View><ActivityIndicator size="large" color="#2E2F42" /></View> :
         <View style={{flex:1}}>

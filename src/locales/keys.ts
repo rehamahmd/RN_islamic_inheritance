@@ -59,6 +59,7 @@ export enum Locales { // camel case
     menu_home= "menu_home",
     menu_articles= "menu_articles",
     menu_language= "menu_language",
+    menu_aboutus = "menu_aboutus",
 
 
     // HOme

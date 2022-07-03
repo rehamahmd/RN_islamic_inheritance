@@ -70,7 +70,7 @@ import { Dimension } from './styles/dimensions';
       Alert.alert("File Saved At +", path);
       console.log('FILE WRITTEN!')
      })
-     .catch((err) => console.log('eeeeeeeeeeeeeeeeeeeee'+err.message));
+     .catch((err) => console.log('e'+err.message));
   }
   
 

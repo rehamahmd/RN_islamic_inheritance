@@ -11,7 +11,7 @@ export const ArticlesCard = ({item, navigation}:any) => {
     return   (<View key={item} style={styles.mainCardStyle}>
         <TouchableOpacity>
             <View style={{ marginStart:10, borderRadius:10, justifyContent:'center',backgroundColor:'white', width:Dimension.convertH(90),height:Dimension.convertH(90)}}>
-              <Image source={item.image!=null?{uri:item.image}: require("../../assets/images/inh3.png")}  style={[{width: Dimension.convertH(90), height: Dimension.convertH(70), resizeMode: 'contain'}]} /> 
+              <Image source={item.image!=null?{uri:item.image}: require("../../assets/images/images.jpg")}  style={[{width: Dimension.convertH(90), height: Dimension.convertH(70), resizeMode: 'contain'}]} /> 
             </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={()=>navigation.navigate("ArticlesDetails",item)} style={{width:'65%', paddingHorizontal:10, justifyContent:'center',backgroundColor:'white', height:Dimension.convertH(90)}}>

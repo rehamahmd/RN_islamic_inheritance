@@ -33,7 +33,8 @@ useEffect(() => {
   setText(t(Locales.actual_heirs))
   if (isInitialRender) {
     setIsInitialRender(false);
-    var s = props.selectedHeirs[(props.values[0].name).toString()];
+    const isEmpty = Object.keys(props.selectedHeirs).length === 0;
+    var s = !isEmpty?props.selectedHeirs[(props.values[0].name).toString()]:{} as any;
     s["share"] = props.values[0].value;
     setSelectedEntry(s)
   
@@ -67,12 +68,14 @@ useEffect(() => {
 
   const handleSelect = (event:any)=> {
     let entry = event.nativeEvent
+    
     if (entry == null) {
         setSelectedEntry({})
-        setProof([])
+        
     } else {
-        setSelectedEntry(entry)
-        setProof(entry.data.proofs)  
+      const isEmpty = Object.keys(props.selectedHeirs).length === 0;
+      if(isEmpty) return;
+      if(entry.data ==null||entry.data.name==null||entry.data.value == null)return;
         var s = props.selectedHeirs[(entry.data.name).toString()];
         s["share"] = entry.data.value;
         setSelectedEntry(s)
@@ -121,11 +124,8 @@ useEffect(() => {
           />
         </View>
       <View style={{height:Dimension.convertH(10)}}/>
-     
       <View style={{flex:1}}>
-       
          <ScrollView> 
-    
            <View>
              <View style={{flexDirection:'row'}}>
               <Text style={[formStyle.title,formStyle.ArabicFontFamilyMedium,]}>{t(Locales.heir)}</Text>
@@ -134,37 +134,37 @@ useEffect(() => {
             </View>
             <View style={{height:8}}/>
             {/* causing */}
-            <View style={{flexDirection:'row'}}>
+            {selectedEntry.causing!=null ||selectedEntry.causingEn!=null?    <View style={{flexDirection:'row'}}>
               <Text style={[formStyle.title,formStyle.ArabicFontFamilyMedium]}>{t(Locales.causing)}</Text>
               <View style={{width:30}}></View>
               <Text style={[formStyle.title,formStyle.ArabicFontFamily,{flexWrap:'wrap'}]}>{i18n.language == 'ar'?t(selectedEntry.causing) : t(selectedEntry.causingEn)}</Text>
-            </View>
+            </View>:null}
             <View style={{height:8}}/>
             {/* // */}
             <View style={{flexDirection:'row'}}>
-              <Text style={[formStyle.title,formStyle.ArabicFontFamilyMedium,]}>{t(Locales.share_percentage)}</Text>
+              <Text style={[formStyle.title,formStyle.ArabicFontFamilyMedium]}>{t(Locales.share_percentage)}</Text>
               <View style={{width:30}}></View>
-              <Text style={[formStyle.title]}>{`% ${selectedEntry.share}`}</Text>
+              <Text style={[formStyle.title,,{fontFamily:'sans-serif'},]}>{`% ${selectedEntry.share}`}</Text>
             </View>
             <View style={{height:8}}/>
 
           {props.amount == 0?<Text></Text>:  <View style={{flexDirection:'row'}}>
               <Text style={[formStyle.title,formStyle.ArabicFontFamilyMedium,]}>{t(Locales.amount)}</Text>
               <View style={{width:30}}></View>
-              <Text style={[formStyle.title,formStyle.ArabicFontFamily,]}>{`${selectedEntry.share*props.amount/100}  ${t(Locales.currency)}`}</Text>
+              <Text style={[formStyle.title,{fontFamily:'sans-serif'}]}>{`${selectedEntry.share*props.amount/100}  ${t(Locales.currency)}`}</Text>
             </View>}
             {/* <View style={{height:5}}/> */}
             <View style={{height:8}}/>
-            <View style={{flexDirection:'row'}}>
+          {selectedEntry.proofType!=null || selectedEntry.proofTypeEn !=null?  <View style={{flexDirection:'row'}}>
               <Text style={[formStyle.title,formStyle.ArabicFontFamilyMedium]}>{t(Locales.proofType)}</Text>
               <View style={{width:30}}></View>
               <Text style={[formStyle.title,formStyle.ArabicFontFamily,{flexWrap:'wrap'}]}>{i18n.language == 'ar'?t(selectedEntry.proofType) : t(selectedEntry.proofTypeEn)}</Text>
-            </View>
+            </View>:null}
             <View style={{height:8}}/>
-            <View style={{flexDirection:'column'}}>
+          {selectedEntry.textAr!=null||selectedEntry.textEn !=null?  <View style={{flexDirection:'column'}}>
               <Text style={[formStyle.title,formStyle.ArabicFontFamilyMedium,]}>{t(Locales.textAr)}</Text>
               <Text style={[formStyle.title,formStyle.ArabicFontFamily,{paddingEnd:44}]}>{i18n.language == 'ar'?t(selectedEntry.textAr) : t(selectedEntry.textEn)}</Text>
-            </View>
+            </View>:null}
   
             <View style={{height:15}}/>
            
@@ -201,7 +201,7 @@ function mapStateToProps({heirs}:any)  {
         var label = t(result[i].name);
         var name = result[i].name;
         var share = parseFloat(((result[i].share.n/result[i].share.d)*100).toFixed(2));
-        allCount.push({value:share,name:name,label:label,proofs:heirs.allHeirs[result[i].name].proof ?? []}),
+        allCount.push({value:share,name:name,label:label}),
         colorsList.push(processColor(color))
     }
      return { 

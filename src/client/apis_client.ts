@@ -1,4 +1,4 @@
-import { ArticlesApi } from "../apis/ArticlesApi";
+
 import { SharedPreference } from "./SharedPreference";
 import axios from 'axios';
 
@@ -19,8 +19,7 @@ export class ApisClient{
            
      
       });
-       console.log("-------------------------------------");
-       console.log(this.articles);
+    
      
     }
 

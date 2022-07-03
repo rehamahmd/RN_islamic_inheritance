@@ -85,6 +85,15 @@ subtitle:{
     color:StyleColors.textColor
  
 },
+
+subtitle2:{
+    fontSize:16,
+    textAlign:'justify',
+    lineHeight:28,
+    // fontFamily:'GE-SS-Text-Light',
+    color:'#777'
+ 
+},
 boxShadowStyle:{
     shadowColor: "#ccc",
     shadowOffset: {

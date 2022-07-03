@@ -34,9 +34,12 @@ const CalculateButton = (props:any) => {
 
   getRef(allSelectedHeirs, results);
   
-  
+if(props.calcResult.length>0){
    props.navigation.pop();
    props.navigation.navigate('CalculationChart');
+  } else {
+    
+  }
  }
 
  const printResultss=  (results:any)=> {
@@ -738,7 +741,8 @@ const styles = StyleSheet.create({
 function mapStateToProps({heirs}:any)  {
   return { 
     heirCalc: heirs.heirs,
-    heirsData: heirs.heirsData
+    heirsData: heirs.heirsData,
+    calcResult:heirs.calcResult,
  }
 };
 

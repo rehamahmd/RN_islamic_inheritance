@@ -24,85 +24,21 @@ export class HeirModel {
   }
   
 
-  // export const allHeirsList : Array<HeirModel> = [
-  //   // Deceased
-  //   // One of them husband or wife
-  //   new HeirModel({displayName:'wife', name: heirsEnum.wife, count:0}),
-  //   new HeirModel({displayName:'husband', name: heirsEnum.husband, count:0}),
-   
-  //   // sons
-  //   new HeirModel({displayName:'son', name: heirsEnum.son, count:0}),
-  //   new HeirModel({displayName:'daughter', name: heirsEnum.daughter, count:0}),
-    
-  //   // Descendants 
-  //   new HeirModel({displayName:'son of son', name: heirsEnum.paternal_grand_son, count:0}),
-  //   new HeirModel({displayName:'daughter of son', name: heirsEnum.paternal_grand_daughter, count:0}),
-
-  //   // Parents 
-  //   new HeirModel({displayName:'father', name: heirsEnum.father, count:0}),
-  //   new HeirModel({displayName:'mother', name: heirsEnum.mother, count:0}),
-
-  //   // Ancestors 
-  //   new HeirModel({displayName:'grand father', name: heirsEnum.paternal_grand_father, count:0}),
-  //   new HeirModel({displayName:'grand mother', name: heirsEnum.paternal_grand_mother, count:0}),
-  //   new HeirModel({displayName:'grand grand mother', name: heirsEnum.maternal_grand_mother, count:0}),
-
-  //    // Brothers 
-  //    new HeirModel({displayName:'brother', name: heirsEnum.full_brother, count:0}),
-  //    new HeirModel({displayName:'sister', name: heirsEnum.full_sister, count:0}),
-
-  // ]
-
-
-
-  // export const heirsView   = {
-
-  //   'sons':[
-  //     new HeirModel({displayName:'ابن', name: heirsEnum.son, count:0}),
-  //     new HeirModel({displayName:'ابنه', name: heirsEnum.daughter, count:0}),
-  //   ],
-
-  //   'descendants':[
-  //     new HeirModel({displayName:'ابن الابن', name: heirsEnum.paternal_grand_son, count:0}),
-  //     new HeirModel({displayName:'بنت الابن', name: heirsEnum.paternal_grand_daughter, count:0}),  
-  //   ],
-
-  //   'parents':[
-  //     new HeirModel({displayName:'الاب', name: heirsEnum.father, count:0}),
-  //     new HeirModel({displayName:'الأم', name: heirsEnum.mother, count:0}),  
-  //   ],
-
-  //   'ancestors':[
-  //     new HeirModel({displayName:'الجد لأب', name: heirsEnum.paternal_grand_father, count:0}),
-  //     new HeirModel({displayName:'الجدة لأب', name: heirsEnum.paternal_grand_mother, count:0}),
-  //     new HeirModel({displayName:'الجدة لأم', name: heirsEnum.maternal_grand_mother, count:0}),
-  //   ],
-
-  //   'siblings': [
-  //     new HeirModel({displayName:'الأخ', name: heirsEnum.full_brother, count:0}),
-  //     new HeirModel({displayName:'الأخت', name: heirsEnum.full_sister, count:0}),
-  //   ]
-  // }
-
   export const allHeirsForView = {
-    // Deceased
-    // One of them husband or wife
-   
-  //  [heirsEnum.wife]: new HeirModel({displayName:'wife', name: heirsEnum.wife, count:0,maxCount:100,color:'#F8EFBA'}),
-  //  [heirsEnum.husband]:  new HeirModel({displayName:'husband', name: heirsEnum.husband, count:0,maxCount:100,color:'#8692BA'}),
-    [heirsEnum.wife]: new HeirModel({displayName:'wife', name: heirsEnum.wife,  proof:AllData[heirsEnum.wife],count:0, maxCount:4,color:'#F8EFBA'}),
-    [heirsEnum.husband]:  new HeirModel({displayName:'husband', name: heirsEnum.husband,proof:AllData[heirsEnum.husband], count:0,maxCount:1,color:StyleColors.color1}),
+    
+    [heirsEnum.wife]: new HeirModel({displayName:'wife', name: heirsEnum.wife,  count:1, maxCount:4,color:'#F8EFBA'}),
+    [heirsEnum.husband]:  new HeirModel({displayName:'husband', name: heirsEnum.husband,count:0,maxCount:1,color:StyleColors.color1}),
     // sons
-    [heirsEnum.son]:  new HeirModel({displayName:'son', name: heirsEnum.son,proof:AllData[heirsEnum.son], count:0,maxCount:100,color:'#7F9B9B'}),
-    [heirsEnum.daughter]:  new HeirModel({displayName:'daughter', name: heirsEnum.daughter,proof:AllData[heirsEnum.daughter], count:0,maxCount:100,color:'#ACA3E2'}),
+    [heirsEnum.son]:  new HeirModel({displayName:'son', name: heirsEnum.son, count:0,maxCount:100,color:'#7F9B9B'}),
+    [heirsEnum.daughter]:  new HeirModel({displayName:'daughter', name: heirsEnum.daughter, count:0,maxCount:100,color:'#ACA3E2'}),
     
     // Descendants 
-    [heirsEnum.paternal_grand_son]:  new HeirModel({displayName:'son of son', name: heirsEnum.paternal_grand_son, proof:AllData[heirsEnum.paternal_grand_son],count:0,maxCount:100,color:'#4CB9CD'}),
-    [heirsEnum.paternal_grand_daughter]:   new HeirModel({displayName:'daughter of son', name: heirsEnum.paternal_grand_daughter,proof:AllData[heirsEnum.paternal_grand_daughter], count:0,maxCount:100,color:'#ACA3E2'}),
+    [heirsEnum.paternal_grand_son]:  new HeirModel({displayName:'son of son', name: heirsEnum.paternal_grand_son, count:0,maxCount:100,color:'#4CB9CD'}),
+    [heirsEnum.paternal_grand_daughter]:   new HeirModel({displayName:'daughter of son', name: heirsEnum.paternal_grand_daughter, count:0,maxCount:100,color:'#ACA3E2'}),
 
     // Parents 
-    [heirsEnum.father]:   new HeirModel({displayName:'father', name: heirsEnum.father, proof:AllData[heirsEnum.father],count:0,maxCount:100,color:'#8692BA'}),
-    [heirsEnum.mother]:   new HeirModel({displayName:'mother', name: heirsEnum.mother, proof:AllData[heirsEnum.mother],count:0,maxCount:100,color:'#F5D7DF'}),
+    [heirsEnum.father]:   new HeirModel({displayName:'father', name: heirsEnum.father,count:0,maxCount:100,color:'#8692BA'}),
+    [heirsEnum.mother]:   new HeirModel({displayName:'mother', name: heirsEnum.mother,count:0,maxCount:100,color:'#F5D7DF'}),
 
     // Ancestors 
     [heirsEnum.paternal_grand_father]:   new HeirModel({displayName:'grand father', name: heirsEnum.paternal_grand_father,proof:null, count:0,maxCount:100,color:'#A6D1C4'}),
@@ -110,11 +46,11 @@ export class HeirModel {
     [heirsEnum.maternal_grand_mother]:   new HeirModel({displayName:'grand grand mother', name: heirsEnum.maternal_grand_mother, count:0,maxCount:100,color:'##E395A5'}),
 
      // Brothers 
-     [heirsEnum.full_brother]:   new HeirModel({displayName:'brother', name: heirsEnum.full_brother,proof:AllData[heirsEnum.full_brother], count:0,maxCount:100,color:StyleColors.Color7}),
-     [heirsEnum.full_sister]:   new HeirModel({displayName:'sister', name: heirsEnum.full_sister,proof:AllData[heirsEnum.full_sister], count:0,maxCount:100,color:'#E092C2'}),
-     [heirsEnum.paternal_sister]:   new HeirModel({displayName:'paternal_sister', name: heirsEnum.paternal_sister,proof:AllData[heirsEnum.paternal_sister], count:0,maxCount:100,color:'#947287'}),
+     [heirsEnum.full_brother]:   new HeirModel({displayName:'brother', name: heirsEnum.full_brother, count:0,maxCount:100,color:StyleColors.Color7}),
+     [heirsEnum.full_sister]:   new HeirModel({displayName:'sister', name: heirsEnum.full_sister, count:0,maxCount:100,color:'#E092C2'}),
+     [heirsEnum.paternal_sister]:   new HeirModel({displayName:'paternal_sister', name: heirsEnum.paternal_sister, count:0,maxCount:100,color:'#947287'}),
      [heirsEnum.paternal_brother]:   new HeirModel({displayName:'paternal_brother', name: heirsEnum.paternal_brother, count:0,maxCount:100,color:'#447FAF'}),
-     [heirsEnum.maternal_sibling]:   new HeirModel({displayName:'maternal_sibling', name: heirsEnum.maternal_sibling,proof:AllData[heirsEnum.paternal_sister], count:0,maxCount:100,color:'#CADDC2'}),
+     [heirsEnum.maternal_sibling]:   new HeirModel({displayName:'maternal_sibling', name: heirsEnum.maternal_sibling, count:0,maxCount:100,color:'#CADDC2'}),
 
 
      // others
@@ -161,7 +97,7 @@ export class HeirModel {
 
 
   export const allCalcHeirs = {
-    [heirsEnum.wife]: 0,
+    [heirsEnum.wife]: 1,
     [heirsEnum.son]: 0,
     [heirsEnum.daughter]:  0,
     

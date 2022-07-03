@@ -32,8 +32,7 @@ export function getAllHeirsData(){
       response => response.json()
     ).then(
       json => {
-        console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEe");
-        console.log(json);
+  
         
         dispatch({ type: GET_DATA, payload:json });},
       err => dispatch({ type: "SOMETHING_FAILED", err })

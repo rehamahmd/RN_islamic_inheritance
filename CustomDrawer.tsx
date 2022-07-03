@@ -12,7 +12,7 @@ import CustomTabBar  from './src/screens/home/bottom_navigation_tab_bar';
 import { StyleColors } from './src/styles/colors';
 
  function CustomDrawer(props:any) {
-  var image = './src/assets/app_logo.png';
+  var image = './src/assets/app_logo.jpg';
   const [currentTab, setCurrentTab] = useState("Home");
  
   const [showMenu, setShowMenu] = useState(false);

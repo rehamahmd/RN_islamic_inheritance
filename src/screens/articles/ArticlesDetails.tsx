@@ -23,20 +23,20 @@ import i18n from '../../locales';
       try {
         await Tts.getInitStatus();
         Tts.speak(item.title + item.body);
-        console.log("sssssssssssssssss");
+     
       }
       catch (e) {
-       console.log("eeeeeeeeeeeeeee"+e); 
+      
       }
   }
   const appBar = () => {
-    return <View style={[AppStyle.appBarStyle, formStyle.boxShadowStyle]}>
-         <CustomSvg svgXmlData={AppIcons.forwardArrowSvg} width={15} height={15}/>
+    return <TouchableOpacity  onPress={()=>props.navigation.goBack()} style={[AppStyle.appBarStyle, formStyle.boxShadowStyle]}>
+          <CustomSvg svgXmlData={i18n.language == 'ar'? AppIcons.forwardArrowSvg: AppIcons.backwardArrowSvg} width={15} height={15}/>
          <View style={{width:20}}/>
          <TouchableOpacity onPress={()=>speak()}>
          <Text style={[formStyle.formTitle, {fontSize:22}]}></Text>   
          </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
   }
   return (
       <View style={{flex:1,backgroundColor:StyleColors.white}}>

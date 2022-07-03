@@ -66,9 +66,9 @@ import AllData from './data';
           </TouchableOpacity> 
           {props.amount==0?<Text></Text>:<View style={{flexDirection:'row',paddingHorizontal:10,marginVertical:5}}>
           <Text style={[formStyle.title,{fontSize:30}]}></Text>
-          <Text style={[formStyle.title,{fontSize:30}]}>{props.amount.toString()}</Text>
+          <Text style={[{fontSize:30,fontFamily:'sans-serif'}]}>{props.amount.toString()}</Text>
           <View style={{width:10}}/>
-          <Text style={[formStyle.title,{fontSize:30}]}>{t(Locales.currency)}</Text>
+          <Text style={{fontSize:30,fontFamily:'sans-serif'}}>{t(Locales.currency)}</Text>
           </View>}
           <CalculationPieChart selectedHeirs={props.selectedHeirs} proof={proof} p={props.calcResult} chartColorsList={colorsList} cl={cl} names={names}/>
       </View>

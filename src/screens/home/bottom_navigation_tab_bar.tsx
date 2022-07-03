@@ -24,23 +24,24 @@ import { bindActionCreators } from 'redux';
   import SplashScreen from '../splash_screen';
   import Home from './home';
   import {resetData} from '../../client/actions/heirs_actions';
+import AboutUs from './AboutUs';
   export const CustomTabBar = (props:any) => {
     const { t } = useTranslation();
     const _renderIcon = (routeName: string, selectedTab: string) => {
       let icon = '';
       let title = '';
       switch (routeName) {
-        case 'title1':
+        case 'Home':
           icon = AppIcons.home;
           title = t(Locales.home_main);
           break;
-        case 'title2':
-          icon = AppIcons.filledBookmark;
-          title = t(Locales.home_bookmarks);
+        case 'AboutUs':
+          icon = AppIcons.quest;
+          title = t(Locales.menu_aboutus);
           break;
       }
       return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>{if(routeName!='Home') props.navigation.navigate(routeName)}}>
           <View style={{flexDirection:'row', justifyContent: 'center',alignItems:'center'}}>
             <CustomSvg
               width={18}
@@ -57,7 +58,7 @@ import { bindActionCreators } from 'redux';
 
       return (
         <TouchableOpacity
-          onPress={() => navigate(routeName)}
+          onPress={() =>{if(routeName!='Home') props.navigation.navigate(routeName)}}
           style={{
             flex: 1,
             alignItems: 'center',
@@ -75,7 +76,7 @@ import { bindActionCreators } from 'redux';
           height={60}
           circleWidth={55}
           bgColor="white"
-          initialRouteName="title1"
+          initialRouteName="Home"
           borderTopLeftRight
           swipeEnabled = {false}
           renderCircle={({ selectedTab, navigate }) => (
@@ -98,19 +99,19 @@ import { bindActionCreators } from 'redux';
           )}
           tabBar={renderTabBar}>
           <CurvedBottomBar.Screen
-            name="title1"
+            name="Home"
             position="left"
-            component={({ navigate }:{navigate:any}) => (
+            component={(navigate) => (
               <View style={{ flex: 1 }} >
                 <Home navigation={props.navigation} onPressMenu={()=>props.onPressMenu()}/>
               </View>
             )}
           />
           <CurvedBottomBar.Screen
-            name="title2"
-            component={({ navigate }:{navigate:any}) => (
+            name="AboutUs"
+            component={(navigate) => (
               <View style={{ flex: 1 }}>
-                <ArticlesScreen />
+                <AboutUs show={false}/>
               </View>
             )}
             position="right"

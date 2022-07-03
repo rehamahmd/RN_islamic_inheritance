@@ -36,7 +36,10 @@ function Home (props:any)  {
           <Text style={[styles.title,{fontSize:14, color:'#2E2F42',paddingHorizontal:13,textAlign:'center'},formStyle.ArabicFontFamilyMedium]}>{t(Locales.inheritance_calculation_subtitle)}</Text>
   
           <View style={{height:3}}/>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>{
+              // props.resetData();
+              props.navigation.navigate('CalculatorScreen');
+              }}>
               <View style={{height:38,justifyContent:'center',alignItems:'center', width:Dimension.convertW(150),borderRadius:10, backgroundColor:'#2E2F42'}}>
                 <Text style={[{color:'white',fontSize:15},formStyle.ArabicFontFamilyBold]}>{t(Locales.inheritance_calculation_tryIt)}</Text>
               </View>
@@ -52,6 +55,25 @@ function Home (props:any)  {
             </View>
          </View>
          <HomeArticlesSection />
+
+         {/* <View style={[formStyle.boxShadowStyle,{position:'absolute',bottom:10,height:80,width:80,backgroundColor:'#fff',margin:10,borderRadius:40,justifyContent:'center',alignItems:'center'}]}>
+         <TouchableOpacity
+                style={{
+                  flex: 1,
+                  justifyContent: 'center',
+                  alignItems:'center'
+                }}
+                onPress={() =>{
+                  props.resetData();
+                  props.navigation.push('CalculatorScreen')
+                }}>
+                <CustomSvg
+                  width={20}
+                  height={20}
+                  svgXmlData={AppIcons.calc}/>
+              </TouchableOpacity>
+          
+         </View> */}
     </View>
     
   );

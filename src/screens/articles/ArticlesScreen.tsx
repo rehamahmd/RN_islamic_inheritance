@@ -28,11 +28,11 @@ import { ArticleViewModel } from './ArticleViewModel';
     setArticles(articles);
   }, []);
   const appBar = () => {
-    return <View style={[AppStyle.appBarStyle, formStyle.boxShadowStyle]}>
-         <CustomSvg svgXmlData={i18n.language == 'ar'? AppIcons.backwardArrowGreySvg: AppIcons.forwardArrowSvg} width={15} height={15}/>
+    return <TouchableOpacity onPress={()=>props.navigation.goBack()}  style={[AppStyle.appBarStyle, formStyle.boxShadowStyle]}>
+         <CustomSvg svgXmlData={i18n.language == 'ar'? AppIcons.forwardArrowSvg: AppIcons.backwardArrowSvg} width={15} height={15}/>
          <View style={{width:20}}/>
          <Text style={[formStyle.formTitle, {fontSize:22}]}>{t(Locales.menu_articles)}</Text>   
-      </View>
+      </TouchableOpacity>
   }
   return (
       <View style={{flex:1,backgroundColor:StyleColors.bgColor}}>

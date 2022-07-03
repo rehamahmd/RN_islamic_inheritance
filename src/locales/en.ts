@@ -47,7 +47,7 @@ full_nephew: "Full Nephew",
     menu_home:"Home",
     menu_articles: "Articles",
     menu_language: "Language",
-
+    menu_aboutus: 'About Us',
 
     // home
     inheritance_calculation: "Inheritance Calculation",

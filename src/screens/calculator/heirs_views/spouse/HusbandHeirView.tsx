@@ -1,4 +1,4 @@
-import React , {useState }from "react"
+import React , {useEffect, useState }from "react"
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
 import { connect } from "react-redux"
@@ -17,6 +17,9 @@ import CustomHeirView from "../CustomHeirView"
 function HusbandHeirView(props:any){
 
 const {setHeirNumbers, wife, husband} = props;
+
+
+
 const plusAction = () => {
   if(wife.count == wife.maxCount) return;
   ++wife.count;

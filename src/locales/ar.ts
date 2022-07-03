@@ -57,7 +57,7 @@ const ar = {
    menu_home:"الرئيسية",
    menu_articles: "المقالات",
    menu_language: "اللغة",
-
+   menu_aboutus: 'من نحن',
 
    // home 
    inheritance_calculation: "حساب المواريث",

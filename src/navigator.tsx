@@ -14,6 +14,8 @@ import ArticlesScreen from './screens/articles/ArticlesScreen';
 import ArticlesDetails from './screens/articles/ArticlesDetails';
 import SplashScreen from './screens/splash_screen';
 import RulesScreen from './screens/home/RulesScreen';
+import AboutUs from './screens/home/AboutUs';
+import Home from './screens/home/home';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +23,7 @@ const RootNavigator = () => {
   return (
     <NavigationContainer onReady={() => RNBootSplash.hide()}>
       <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="CustomDrawer">    
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="CalculatorScreen" component={CalculatorScreen} />
         <Stack.Screen name="CalculationChart" component={CalculationChart} />
         <Stack.Screen name="CustomDrawer" component={CustomDrawer} />
@@ -32,6 +34,7 @@ const RootNavigator = () => {
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="ArticlesDetails" component={ArticlesDetails} />
         <Stack.Screen name="RulesScreen" component={RulesScreen} />
+        <Stack.Screen name="AboutUs" component={AboutUs} />
         
         
       </Stack.Navigator>

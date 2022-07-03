@@ -74,9 +74,11 @@ export default function heirsReducer(state = initialState, action:any) {
            }
 
            case 'RESET_DATA':{
+            
             return {
               ...state,
-              state:initialState
+              allHeirs:allHeirsForView,
+              
             } 
            }
            case 'SET_SELECTED_HEIRS':{

@@ -31,7 +31,6 @@ export function printResults(results: Result[]) {
     share: r.share.toFraction()
   })
 
-  console.log(results.map(fractionToString))
 }
 
 export const sumResults = (results: Result[]) => {

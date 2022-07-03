@@ -17,10 +17,6 @@ import { formStyle } from './FormStyle';
 const FinishButton = (props:any) => {
  const {heirCalc, calculateResult, navigation} = props; 
  const { t } = useTranslation();
- console.log( props.navigation);
-console.log( "propsaaaaaaaaaaa");
-console.log( props);
-console.log( props);
  const navigateBack = () => {
 
    props.navigation.goBack();

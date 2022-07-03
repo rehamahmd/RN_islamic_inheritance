@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
+import i18n from './src/locales';
 import { Locales } from './src/locales/keys';
 import { formStyle } from './src/screens/calculator/FormStyle';
 import CustomSvg from './src/screens/custom_svg';
@@ -12,7 +13,7 @@ import { StyleColors } from './src/styles/colors';
 
 
 export default function CustomDrawerContent(props:any) {
-  var image = './src/assets/app_logo.png';
+  var image = './src/assets/app_logo.jpg';
   const [currentTab, setCurrentTab] = useState("Home");
   const {t} = useTranslation();
   return (
@@ -31,14 +32,16 @@ export default function CustomDrawerContent(props:any) {
           {TabButton(currentTab,()=> {
             props.onPressMenu();
            
-          }, t(Locales.menu_home), require(image))}
+          }, t(Locales.menu_home), require('./src/assets/images/logo2.png'))}
           {TabButton(currentTab,()=>{ 
             props.onPressMenu();
             props.navigation.navigate('ArticlesScreen')}, t(Locales.menu_articles), require('./src/assets/images/article.png'))}
               {TabButton(currentTab,()=>{ 
             props.onPressMenu();
             props.navigation.navigate('SelectLanguage')}, t(Locales.menu_language), require('./src/assets/images/language.png'))}
-         
+                {/* {TabButton(currentTab,()=>{ 
+            props.onPressMenu();
+            props.navigation.navigate('AboutUs')}, t(Locales.menu_aboutus), require('./src/assets/images/quest.png'))} */}
         </View>
 
                   
@@ -46,15 +49,14 @@ export default function CustomDrawerContent(props:any) {
         <View style={{ height:50}}></View>
         <View >
           <View style={{ flexDirection: 'row', justifyContent:'space-between',width:140}}>
-          <CustomSvg svgXmlData={AppIcons.twitter}  width={20} height={20} />
-          <CustomSvg svgXmlData={AppIcons.facebook}  width={20} height={20} />
-          <CustomSvg svgXmlData={AppIcons.instagram}  width={20} height={20} />
+          {/* <CustomSvg svgXmlData={AppIcons.twitter}  width={20} height={20} /> */}
+          {/* <CustomSvg svgXmlData={AppIcons.facebook}  width={20} height={20} /> */}
+          {/* <CustomSvg svgXmlData={AppIcons.instagram}  width={20} height={20} /> */}
           </View>
         </View>
-        <View style={{ height:20}}></View>
-        <View style={{ height:.1,backgroundColor:StyleColors.lightGrey, width:300}}></View>
-        <View style={{ height:10}}></View>
-        <View><Text style={formStyle.formTitle}>{'جميع الحقوق محفوظة'}</Text></View>
+        <View style={{ height:80}}></View>
+        {/* <View style={{ height:.1,backgroundColor:StyleColors.lightGrey, width:300}}></View> */}
+        <View><Text style={formStyle.formTitle}>{i18n.language == 'ar'? 'جميع الحقوق محفوظة':'All Rights Reserved'}</Text></View>
         
         <View style={{ height:20}}></View>
       </View>

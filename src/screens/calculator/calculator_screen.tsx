@@ -79,7 +79,8 @@ function mapStateToProps({heirs}:any)  {
   return { 
   
    heirs: heirs.heirs,
-   gender:heirs.gender
+   gender:heirs.gender,
+   
  }
 };
 
