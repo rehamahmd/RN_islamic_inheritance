@@ -97,7 +97,7 @@ export class HeirModel {
 
 
   export const allCalcHeirs = {
-    [heirsEnum.wife]: 1,
+    [heirsEnum.wife]: 0,
     [heirsEnum.son]: 0,
     [heirsEnum.daughter]:  0,
     

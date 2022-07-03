@@ -54,7 +54,7 @@ function Home (props:any)  {
             <HomeCategoryCard navigation={props.navigation} text={t(Locales.inheritance_law)} textColor="#F26F58" color='#FEF5DD' style={{marginTop:4,marginStart:12}} imagePath={require('../../assets/images/balance.png')}/>
             </View>
          </View>
-         <HomeArticlesSection />
+         <HomeArticlesSection navigation={props.navigation} />
 
          {/* <View style={[formStyle.boxShadowStyle,{position:'absolute',bottom:10,height:80,width:80,backgroundColor:'#fff',margin:10,borderRadius:40,justifyContent:'center',alignItems:'center'}]}>
          <TouchableOpacity

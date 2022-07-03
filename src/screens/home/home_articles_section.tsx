@@ -39,7 +39,7 @@ export default function HomeArticlesSection(props:any){
         <View style={{flex:1}}>
         <ScrollView  horizontal={true}  > 
         {articles.map((item:any) =>
-            <View key={item.id} style={{marginEnd:12}}><ArticlesCard key={item.id} item={item} /></View>)} 
+            <View key={item.id} style={{marginEnd:12}}><ArticlesCard key={item.id} item={item} navigation={props.navigation}/></View>)} 
         </ScrollView>
         </View>}
       </View>;
